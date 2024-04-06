@@ -1,9 +1,11 @@
 import {createSlice} from '@reduxjs/toolkit'
 
-const initialState = [
-  { name: "Красные", avatar: "cat.png", people: [], color: "#ff6347" },
-  { name: "Синие", avatar: "chick.png", people: [], color: "#0096ff" },
-]
+const initialState = {
+  teamList: [
+    { name: "Красные", avatar: "cat.png", people: [], color: "#ff6347" },
+    { name: "Синие", avatar: "chick.png", people: [], color: "#0096ff" },
+  ]
+}
 
 
 const teamSlice = createSlice({
@@ -12,11 +14,12 @@ const teamSlice = createSlice({
 
   reducers: {
     addTeam: (state, action) => {
-      state.push(action.payload)
+      console.log(action.payload);
+      state.teamList.push(action.payload)
     },
     
     removeTeam: (state, action) => {
-      state.splice(0, action.payload.index)
+      state.teamList.splice(0, action.payload.index)
     }
 
 
@@ -25,4 +28,5 @@ const teamSlice = createSlice({
 })
 
 export default teamSlice.reducer
+export const {addTeam, removeTeam} = teamSlice.actions
 
