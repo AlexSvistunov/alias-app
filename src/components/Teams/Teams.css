@@ -9,6 +9,7 @@
 }
 
 .team__item {
+  position: relative;
   max-width: 350px;
   width: 100%;
   display: flex;
@@ -54,4 +55,9 @@
 
 .team__name {
 
+}
+
+.team__create {
+  position: absolute;
+  inset: 0;
 }
