@@ -1,0 +1,39 @@
+.time {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+  font-size: 35px;
+}
+
+
+.cards {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  font-size: 35px;
+  border: 1px solid #ccc;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.button {
+  padding: 15px;
+  font-size: 35px;
+  cursor: pointer;
+}

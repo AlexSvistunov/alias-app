@@ -5,6 +5,7 @@ export const ROUTES = {
   game: '/game',
   createTeam: '/create-team',
   score: '/score',
+  result: '/result',
   
   // teams: '/teams',
   // settings: '/settings',

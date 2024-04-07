@@ -1,0 +1,9 @@
+.turn {
+
+}
+
+
+.turn__turned-team {
+  max-width: fit-content;
+  margin: 0 auto;
+}

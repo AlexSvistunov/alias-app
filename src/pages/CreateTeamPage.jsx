@@ -22,6 +22,7 @@ const CreateTeamPage = () => {
         avatar: "cat.png",
         people: membersList,
         color: "#0096ff",
+        score: 0,
       })
     );
     navigate('/alias')
