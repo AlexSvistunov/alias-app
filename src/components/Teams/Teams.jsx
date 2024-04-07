@@ -16,8 +16,8 @@ const Teams = () => {
         <h3 className="team__title">Выбор команд</h3>
 
         <div className="team__list">
-          {teamsList.map((team) => (
-            <TeamItem key={team.name} team={team} />
+          {teamsList.map((team, index) => (
+            <TeamItem key={team.name} team={team} index={index} />
           ))}
 
           <div className="team__item">

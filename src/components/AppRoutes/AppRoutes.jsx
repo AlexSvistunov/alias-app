@@ -7,6 +7,7 @@ import CreateTeamPage from "../../pages/CreateTeamPage";
 import ScorePage from "../../pages/ScorePage";
 import GamePage from "../../pages/GamePage";
 import ResultPage from "../../pages/ResultPage";
+import TeamEditPage from "../../pages/TeamEditPage";
 
 const AppRoutes = () => {
   return <>
@@ -17,6 +18,7 @@ const AppRoutes = () => {
       <Route path={ROUTES.score} element={<ScorePage/>}></Route>
       <Route path={ROUTES.game} element={<GamePage/>}></Route>
       <Route path={ROUTES.result} element={<ResultPage/>}></Route>
+      <Route path={ROUTES.edit} element={<TeamEditPage/>}></Route>
     </Routes>
   </>;
 };

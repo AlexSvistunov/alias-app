@@ -32,6 +32,9 @@ const teamSlice = createSlice({
     addResultFieldToTeam: (state, action) => {
       console.log(action.payload);
       state.teamList[action.payload.index]["result"] = action.payload.result;
+      const amountOfTrue = action.payload.result.filter((el => el))
+
+      state.teamList[action.payload.index]['score'] += amountOfTrue.length
     },
 
     removeTeam: (state, action) => {

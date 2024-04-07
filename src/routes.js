@@ -6,6 +6,7 @@ export const ROUTES = {
   createTeam: '/create-team',
   score: '/score',
   result: '/result',
+  edit: '/edit-team/:id',
   
   // teams: '/teams',
   // settings: '/settings',
