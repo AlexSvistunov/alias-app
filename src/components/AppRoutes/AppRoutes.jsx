@@ -8,6 +8,7 @@ import ScorePage from "../../pages/ScorePage";
 import GamePage from "../../pages/GamePage";
 import ResultPage from "../../pages/ResultPage";
 import TeamEditPage from "../../pages/TeamEditPage";
+import SettingsPage from "../../pages/SettingsPage";
 
 const AppRoutes = () => {
   return <>
@@ -19,6 +20,7 @@ const AppRoutes = () => {
       <Route path={ROUTES.game} element={<GamePage/>}></Route>
       <Route path={ROUTES.result} element={<ResultPage/>}></Route>
       <Route path={ROUTES.edit} element={<TeamEditPage/>}></Route>
+      <Route path={ROUTES.settings} element={<SettingsPage/>}></Route>
     </Routes>
   </>;
 };

@@ -4,11 +4,19 @@ import "./Teams.css";
 import TeamItem from "../TeamItem/TeamItem";
 import { Link } from "react-router-dom";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+import { removeTeam } from "../../store/slices/teamSlice";
 
 const Teams = () => {
+  const dispatch = useDispatch()
+
   const teamsList = useSelector(state => state.team.teamList)
   console.log(teamsList);
+
+  const deleteTeam = (index) => {
+    dispatch(removeTeam(index))
+  }
 
   return (
     <section className="team">
@@ -17,7 +25,7 @@ const Teams = () => {
 
         <div className="team__list">
           {teamsList.map((team, index) => (
-            <TeamItem key={team.name} team={team} index={index} />
+            <TeamItem key={team.name} team={team} index={index} deleteTeam={deleteTeam} />
           ))}
 
           <div className="team__item">

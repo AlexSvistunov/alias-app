@@ -29,7 +29,7 @@ const ResultPage = () => {
       ))}
 
       <Link style={{display: 'block', marginTop: '50px'}} to={'/score'} onClick={() => {
-          // dispatch(nextTurn())
+          dispatch(nextTurn())
           // проверить количество команд
           // а вообще же еще раунды какиенть
           // количество раундов
