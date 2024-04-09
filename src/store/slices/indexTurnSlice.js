@@ -1,4 +1,7 @@
-import {createSlice} from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
+import useGetTeam from "../../hooks/useGetTeam";
+
+
 
 const initialState = {
   turn: 0,
@@ -10,10 +13,19 @@ const turnSlice = createSlice({
 
   reducers: {
     nextTurn: (state) => {
-      state.turn += 1;
+      // if(state.turn === useGetTeam.length) {
+      //   state.turn = 0
+      // } else {
+      //   state.turn += 1;
+      // }
+      state.turn += 1
     },
+
+    newCircleTurn: state => {
+      state.turn = 0
+    }
   },
 });
 
 export default turnSlice.reducer;
-export const { nextTurn } = turnSlice.actions;
+export const { nextTurn, newCircleTurn } = turnSlice.actions;

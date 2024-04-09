@@ -17,7 +17,7 @@ const Header = () => {
           <a className="header__block-link" href="">
             ПРАВИЛА
           </a>
-          <Link className="header__block-link" to={ROUTES.alias}>
+          <Link className="header__block-link" to={ROUTES.teams}>
             ИГРАТЬ
           </Link>
         </div>

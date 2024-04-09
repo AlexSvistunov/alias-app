@@ -3,13 +3,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { words } from "../utils/constants";
 import { Link } from "react-router-dom";
 
-import { nextTurn } from "../store/slices/indexTurnSlice";
+import { nextTurn, newCircleTurn } from "../store/slices/indexTurnSlice";
+import { ROUTES } from "../routes";
 
 const ResultPage = () => {
   const dispatch = useDispatch()
 
   const turn = useSelector((state) => state.turn.turn);
   const results = useSelector((state) => state.team.teamList)[turn]["result"];
+  const teamList = useSelector((state) => state.team.teamList)
   const array = [];
   const wordSlice = words.slice(0, results.length);
 
@@ -28,8 +30,13 @@ const ResultPage = () => {
         </div>
       ))}
 
-      <Link style={{display: 'block', marginTop: '50px'}} to={'/score'} onClick={() => {
-          dispatch(nextTurn())
+      <Link style={{display: 'block', marginTop: '50px'}} to={ROUTES.score} onClick={() => {
+        
+          if(turn === teamList.length - 1) {
+            dispatch(newCircleTurn())
+          } else {
+            dispatch(nextTurn())
+          }
           // проверить количество команд
           // а вообще же еще раунды какиенть
           // количество раундов
