@@ -13,11 +13,6 @@ const turnSlice = createSlice({
 
   reducers: {
     nextTurn: (state) => {
-      // if(state.turn === useGetTeam.length) {
-      //   state.turn = 0
-      // } else {
-      //   state.turn += 1;
-      // }
       state.turn += 1
     },
 

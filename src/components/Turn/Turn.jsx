@@ -6,7 +6,25 @@ import { ROUTES } from "../../routes";
 
 const Turn = () => {
   const teamList = useSelector((state) => state.team.teamList);
-  const turn = useSelector((state => state.turn.turn))
+  const turn = useSelector((state) => state.turn.turn)
+  const scoreForWin = useSelector(state => state.settings.settings.scoreForWin)
+  console.log(scoreForWin);
+  
+  const winTeams = teamList.filter((team) => team.score >= scoreForWin)
+  if(winTeams.length > 1) {
+    let strongest = winTeams[0].score
+    for(let i = 0; i < winTeams.length; i++) {
+      if(strongest < winTeams[i].score) {
+        strongest = winTeams[i].score
+      }
+      console.log(strongest);
+    }
+
+  }
+  console.log(winTeams);
+
+  // тут еще нужно учесть, что все команды завершили свои раунды
+  // выигрыш по очкам
 
   return (
     <section className="turn">

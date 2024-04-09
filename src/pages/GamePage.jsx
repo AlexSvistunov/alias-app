@@ -13,8 +13,8 @@ const GamePage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch()
   const turn = useSelector(state => state.turn.turn)
-  // c потерей очков и без
-  const [time, setTime] = useState(2);
+  const roundDuration = useSelector(state => state.settings.settings.roundDuration)
+  const [time, setTime] = useState(roundDuration);
   const [currentCardIndex, setCurrentCartIndex] = useState(0);
   const [arrayResults, setArrayResults] = useState([]);
 
