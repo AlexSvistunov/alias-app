@@ -47,9 +47,13 @@ const teamSlice = createSlice({
 
     addPerson: (state, action) => {
       state.teamList[action.payload.index].people.push({memberName: action.payload.person})
+    },
+
+    deletePerson: (state, action) => {
+      state.teamList[action.payload.index].people.splice(action.payload.personId, 1)
     }
   },
 });
 
 export default teamSlice.reducer;
-export const { addTeam, removeTeam, addResultFieldToTeam, changeName, addPerson } = teamSlice.actions;
+export const { addTeam, removeTeam, addResultFieldToTeam, changeName, addPerson, deletePerson } = teamSlice.actions;

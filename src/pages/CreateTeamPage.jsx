@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { addTeam } from "../store/slices/teamSlice";
 import { removeTeam } from "../store/slices/teamSlice";
+import { ROUTES } from "../routes";
 
 const CreateTeamPage = () => {
   const [name, setName] = useState("");
@@ -25,7 +26,7 @@ const CreateTeamPage = () => {
         score: 0,
       })
     );
-    navigate('/alias')
+    navigate(ROUTES.teams)
     
   };
 

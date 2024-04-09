@@ -4,7 +4,8 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { changeName, addPerson } from "../store/slices/teamSlice";
+import { changeName, addPerson, deletePerson } from "../store/slices/teamSlice";
+import { ROUTES } from "../routes";
 
 const TeamEditPage = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const TeamEditPage = () => {
   const teamsListItem = useSelector((state) => state.team.teamList)[id];
 
   const [nameValue, setNameValue] = useState(teamsListItem.name);
-  const [memberNameValue, setMemberNameValue] = useState('')
+  const [memberNameValue, setMemberNameValue] = useState("");
   console.log(nameValue);
 
   const nameOnChange = (value) => {
@@ -22,12 +23,20 @@ const TeamEditPage = () => {
   };
 
   const applyChanges = () => {
-    dispatch(changeName({ index: id, nameValue }));
-    navigate("/alias");
+    if (nameValue) {
+      dispatch(changeName({ index: id, nameValue }));
+      navigate(ROUTES.teams);
+    }
   };
 
   const addPersonHandler = (person) => {
-    dispatch(addPerson({index: id, person}))
+    if (person) {
+      dispatch(addPerson({ index: id, person }));
+    }
+  };
+
+  const deletePersonHandler = (personId) => {
+    dispatch(deletePerson({index: id, personId}))
   }
 
   return (
@@ -45,21 +54,31 @@ const TeamEditPage = () => {
         ></input>
 
         <label htmlFor="members">Участник</label>
-        <input name="members" value={memberNameValue} onChange={(e) => {
-          setMemberNameValue(e.target.value)
-        }}></input>
+        <input
+          name="members"
+          value={memberNameValue}
+          onChange={(e) => {
+            setMemberNameValue(e.target.value);
+          }}
+        ></input>
 
-        <button onClick={() => {
-          addPersonHandler(memberNameValue)
-        }}>Добавить участника</button>
+        <button
+          onClick={() => {
+            addPersonHandler(memberNameValue);
+          }}
+        >
+          Добавить участника
+        </button>
 
         <button onClick={applyChanges}>Готово</button>
 
         {teamsListItem?.people?.length
-          ? teamsListItem?.people?.map((person) => (
+          ? teamsListItem?.people?.map((person, index) => (
               <div key={person?.memberName}>
                 <span>{person?.memberName}</span>
-                <button>X</button>
+                <button onClick={() => {
+                  deletePersonHandler(index)
+                }}>X</button>
               </div>
             ))
           : null}

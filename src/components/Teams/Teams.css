@@ -33,18 +33,35 @@
   align-items: center;
 }
 
+.team__btn-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid black;
+}
+
 .team__delete {
   cursor: pointer;
   border: none;
   background-color: transparent;
   padding: 0;
   margin: 0;
-  position: absolute;
-  bottom: 0;
-  right: 0;
   padding: 2px;
-  border: 1px solid black;
-  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  width: 28px;
+  height: 22px;
+  background-image: url(/src/assets/cross.svg);
+  background-size: cover;
+  background-position: center;
+
 }
 
 .team__img {

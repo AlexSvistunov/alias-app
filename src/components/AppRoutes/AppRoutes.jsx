@@ -14,7 +14,7 @@ const AppRoutes = () => {
   return <>
     <Routes>
       <Route path={ROUTES.landingPage} element={<LandingPage/>}></Route>
-      <Route path={ROUTES.alias} element={<AliasPage/>}></Route>
+      <Route path={ROUTES.teams} element={<AliasPage/>}></Route>
       <Route path={ROUTES.createTeam} element={<CreateTeamPage/>}></Route>
       <Route path={ROUTES.score} element={<ScorePage/>}></Route>
       <Route path={ROUTES.game} element={<GamePage/>}></Route>

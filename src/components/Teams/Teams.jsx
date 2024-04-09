@@ -15,7 +15,11 @@ const Teams = () => {
   console.log(teamsList);
 
   const deleteTeam = (index) => {
-    dispatch(removeTeam(index))
+    if(teamsList.length > 2) {
+      dispatch(removeTeam(index))
+    } else {
+      alert('Вы не можете удалить команду, так как команд должно быть как минимум две')
+    }
   }
 
   return (

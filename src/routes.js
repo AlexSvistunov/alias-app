@@ -1,7 +1,7 @@
 export const ROUTES = {
 
   landingPage: '/landing-page',
-  alias: '/alias',
+  teams: '/teams',
   game: '/game',
   createTeam: '/create-team',
   score: '/score',
