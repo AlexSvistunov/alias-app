@@ -13,31 +13,34 @@ const CreateTeamPage = () => {
   const [membersList, setMembersList] = useState([]);
 
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const teamList = useSelector((state) => state.team.teamList);
 
   const createTeam = () => {
-    dispatch(
-      addTeam({
-        name,
-        avatar: "cat.png",
-        people: membersList,
-        color: "#0096ff",
-        score: 0,
-      })
-    );
-    navigate(ROUTES.teams)
-    
+    if(name) {
+      dispatch(
+        addTeam({
+          name,
+          avatar: "cat.png",
+          people: membersList,
+          color: "#0096ff",
+          score: 0,
+        })
+      );
+      navigate(ROUTES.teams);
+    }
   };
 
   const addMember = () => {
-    setMembersList([
-      ...membersList,
-      {
-        name,
-        memberName,
-      },
-    ]);
+    if (name && memberName) {
+      setMembersList([
+        ...membersList,
+        {
+          name,
+          memberName,
+        },
+      ]);
+    }
   };
 
   console.log(membersList);

@@ -4,6 +4,7 @@ import {
   changeRoundDuration,
   changeScoreForWin,
 } from "../store/slices/settingsSlice";
+import { ROUTES } from "../routes";
 
 const SettingsPage = () => {
   const dispatch = useDispatch();
@@ -15,29 +16,61 @@ const SettingsPage = () => {
       <h3>Длительность раунда</h3>
 
       <button
-        onClick={() => {
+        className="settings__duration-btn"
+        onClick={(e) => {
+          const settingsDurationBtns = document.querySelectorAll(
+            ".settings__duration-btn"
+          );
+          settingsDurationBtns.forEach((settingsDurationBtn) => {
+            settingsDurationBtn.classList.remove("active");
+          });
+
+          e.target.classList.add("active");
           dispatch(changeRoundDuration(20));
         }}
       >
         20
       </button>
       <button
-        onClick={() => {
+        className="settings__duration-btn"
+        onClick={(e) => {
+          const settingsDurationBtns = document.querySelectorAll(
+            ".settings__duration-btn"
+          );
+          settingsDurationBtns.forEach((settingsDurationBtn) => {
+            settingsDurationBtn.classList.remove("active");
+          });
+          e.target.classList.add("active");
           dispatch(changeRoundDuration(30));
         }}
       >
         30
       </button>
       <button
-        className="active"
-        onClick={() => {
+        className="settings__duration-btn active"
+        onClick={(e) => {
+          const settingsDurationBtns = document.querySelectorAll(
+            ".settings__duration-btn"
+          );
+          settingsDurationBtns.forEach((settingsDurationBtn) => {
+            settingsDurationBtn.classList.remove("active");
+          });
+          e.target.classList.add("active");
           dispatch(changeRoundDuration(60));
         }}
       >
         60
       </button>
       <button
-        onClick={() => {
+        className="settings__duration-btn"
+        onClick={(e) => {
+          const settingsDurationBtns = document.querySelectorAll(
+            ".settings__duration-btn"
+          );
+          settingsDurationBtns.forEach((settingsDurationBtn) => {
+            settingsDurationBtn.classList.remove("active");
+          });
+          e.target.classList.add("active");
           dispatch(changeRoundDuration(90));
         }}
       >
@@ -47,7 +80,16 @@ const SettingsPage = () => {
       <h3>Очки для победы</h3>
 
       <button
-        onClick={() => {
+        className="settings__score-btn"
+        onClick={(e) => {
+          const settingsScoreBtns = document.querySelectorAll(
+            ".settings__score-btn"
+          );
+          settingsScoreBtns.forEach((settingsScoreBtn) => {
+            settingsScoreBtn.classList.remove("active");
+          });
+
+          e.target.classList.add("active");
           dispatch(changeScoreForWin(10));
         }}
       >
@@ -55,8 +97,16 @@ const SettingsPage = () => {
       </button>
 
       <button
-        className="active"
-        onClick={() => {
+        className="settings__score-btn active"
+        onClick={(e) => {
+          const settingsScoreBtns = document.querySelectorAll(
+            ".settings__score-btn"
+          );
+          settingsScoreBtns.forEach((settingsScoreBtn) => {
+            settingsScoreBtn.classList.remove("active");
+          });
+
+          e.target.classList.add("active");
           dispatch(changeScoreForWin(30));
         }}
       >
@@ -64,27 +114,62 @@ const SettingsPage = () => {
       </button>
 
       <button
-        onClick={() => {
+        className="settings__score-btn"
+        onClick={(e) => {
+          const settingsScoreBtns = document.querySelectorAll(
+            ".settings__score-btn"
+          );
+          settingsScoreBtns.forEach((settingsScoreBtn) => {
+            settingsScoreBtn.classList.remove("active");
+          });
+
+          e.target.classList.add("active");
           dispatch(changeScoreForWin(50));
         }}
       >
         50
       </button>
-  
-      <button onClick={() => {
-        dispatch(changeScoreForWin(75))
-      }}>75</button>
-      
-      <button onClick={() => {
-        dispatch(changeScoreForWin(100))
-      }}>100</button>
+
+      <button
+        className="settings__score-btn"
+        onClick={(e) => {
+          const settingsScoreBtns = document.querySelectorAll(
+            ".settings__score-btn"
+          );
+          settingsScoreBtns.forEach((settingsScoreBtn) => {
+            settingsScoreBtn.classList.remove("active");
+          });
+
+          e.target.classList.add("active");
+          dispatch(changeScoreForWin(75));
+        }}
+      >
+        75
+      </button>
+
+      <button
+        className="settings__score-btn"
+        onClick={(e) => {
+          const settingsScoreBtns = document.querySelectorAll(
+            ".settings__score-btn"
+          );
+          settingsScoreBtns.forEach((settingsScoreBtn) => {
+            settingsScoreBtn.classList.remove("active");
+          });
+
+          e.target.classList.add("active");
+          dispatch(changeScoreForWin(100));
+        }}
+      >
+        100
+      </button>
 
       <div>
         Отнимать очки за пропуск
         <input type="checkbox"></input>
       </div>
 
-      <Link to={'/alias'}>Продолжить</Link>
+      <Link to={ROUTES.teams}>Продолжить</Link>
     </div>
   );
 };

@@ -4,3 +4,7 @@
 
 /* @import './styles/variables.css'; */
 /* @import './styles/fonts.css'; */
+
+.active {
+  background-color: aquamarine;
+}
