@@ -6,27 +6,48 @@ import { Link } from "react-router-dom";
 import { nextTurn, newCircleTurn } from "../store/slices/indexTurnSlice";
 import { ROUTES } from "../routes";
 
+import { useState } from "react";
+
 const ResultPage = () => {
   const dispatch = useDispatch()
 
   const turn = useSelector((state) => state.turn.turn);
   const results = useSelector((state) => state.team.teamList)[turn]["result"];
   const teamList = useSelector((state) => state.team.teamList)
-  const array = [];
+  const arr = []
   const wordSlice = words.slice(0, results.length);
 
   results.forEach((el, index) => {
-    array.push({ word: wordSlice[index], result: el });
+    arr.push({ word: wordSlice[index], result: el });
+
   });
+
+  const [array, setArray] = useState(arr);
   console.log(array);
+
+  const changeInput = (index) => {
+    setArray(prevArray => {
+      const list = [...prevArray]
+
+      list[index] = {
+        ...list[index],
+        result: !list[index].result
+      }
+
+      return list
+    })
+  }
+
 
   return (
     <div className="container">
       <h2 className="result__title">Результаты раунда</h2>
-      {array.map((result) => (
+      {array.map((result, index) => (
         <div style={{display: 'flex', gap: '20px', alignItems: 'center'}} key={result.word}>
           <div>{result.word}</div>
-          <input type="checkbox" checked={result.result} onChange={() => {}}></input>
+          <input type="checkbox" checked={array[index].result} onChange={() => {
+            changeInput(index)
+          }}></input>
         </div>
       ))}
 

@@ -23,3 +23,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 // когда все ready, формируется массив неповторяющихся слов с предыдущей командой(это для второй и так далее команды), а так просто тусуются из api или из массива
 // победитель
 // какие-то флаги, запущена игра или нет, чтобы нельзя было переходить по ненужным роутам
+
+// delete in createTeamPage
+// result checkbox functionality

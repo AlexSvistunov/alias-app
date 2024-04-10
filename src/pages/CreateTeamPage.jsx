@@ -17,7 +17,7 @@ const CreateTeamPage = () => {
   const teamList = useSelector((state) => state.team.teamList);
 
   const createTeam = () => {
-    if(name) {
+    if (name) {
       dispatch(
         addTeam({
           name,
@@ -43,7 +43,9 @@ const CreateTeamPage = () => {
     }
   };
 
-  console.log(membersList);
+  // const deletePersonHandler = (personId) => {
+  //   dispatch(deletePerson({index: id, personId}))
+  // }
 
   return (
     <div className="create-team">
@@ -64,7 +66,15 @@ const CreateTeamPage = () => {
         ></input>
         <button onClick={addMember}>Добавить участника</button>
 
-        {/* fieldSet */}
+        {membersList.length &&
+          membersList.map((member) => (
+            <div key={member.memberName}>
+              <span>{member.memberName}</span>
+              <button onClick={() => {
+                // deletePersonHandler(index)
+              }}>X</button>
+            </div>
+          ))}
 
         <button
           onClick={createTeam}
