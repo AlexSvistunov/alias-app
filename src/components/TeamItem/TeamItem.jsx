@@ -23,9 +23,13 @@ const TeamItem = ({ team, index, deleteTeam }) => {
       </div>
       <h3 className="team__name">{team.name}</h3>
       <div className="team__people" style={{ display: "flex", gap: "2px" }}>
-        {team?.people?.map((person) => (
-          <div className="team__person">{person.memberName},</div>
-        ))}
+        {team?.people?.map((person, personIndex) =>
+            personIndex + 1 === team.people.length ? (
+              <div key={personIndex}>{person.memberName}</div>
+            ) : (
+              <div key={personIndex}>{person.memberName + ","}</div>
+            )
+        )}
       </div>
     </div>
   );

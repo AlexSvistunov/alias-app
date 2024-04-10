@@ -17,6 +17,7 @@ const GamePage = () => {
   const [time, setTime] = useState(roundDuration);
   const [currentCardIndex, setCurrentCartIndex] = useState(0);
   const [arrayResults, setArrayResults] = useState([]);
+  const [lastWord, setLastWord] = useState(false)
 
   const timeOutId = setTimeout(() => {
     setTime(time - 1);
@@ -24,16 +25,19 @@ const GamePage = () => {
 
   useEffect(() => {
     if (time === 0) {
+
       clearTimeout(timeOutId);
-      navigate(ROUTES.result);
-      dispatch(addResultFieldToTeam({index: turn, result: arrayResults}))
+      setLastWord(currentCardIndex)
+
+      // navigate(ROUTES.result);
+      // dispatch(addResultFieldToTeam({index: turn, result: arrayResults}))
 
     }
-  }, [navigate, time, timeOutId, arrayResults, turn, dispatch]);
+  }, [navigate, time, timeOutId, arrayResults, turn, dispatch, currentCardIndex]);
 
   return (
     <div className="container">
-      <div className="time">{time}</div>
+      <div className="time">{lastWord ? 'последнее слово' : time}</div>
 
       <div className="cards">
         <div className="card">{words[currentCardIndex]}</div>
@@ -46,8 +50,16 @@ const GamePage = () => {
         <div
           className="button"
           onClick={() => {
-            setCurrentCartIndex(currentCardIndex + 1);
-            setArrayResults([...arrayResults, true]);
+            if(lastWord) {
+              setCurrentCartIndex(currentCardIndex + 1);
+              setArrayResults([...arrayResults, true]);
+              navigate(ROUTES.result);
+              dispatch(addResultFieldToTeam({index: turn, result: arrayResults}))
+            } else {
+              setCurrentCartIndex(currentCardIndex + 1);
+              setArrayResults([...arrayResults, true]);
+            }
+       
           }}
         >
           Да
@@ -55,8 +67,15 @@ const GamePage = () => {
         <div
           className="button"
           onClick={() => {
-            setCurrentCartIndex(currentCardIndex + 1);
-            setArrayResults([...arrayResults, false]);
+            if(lastWord) {
+              setCurrentCartIndex(currentCardIndex + 1);
+              setArrayResults([...arrayResults, true]);
+              navigate(ROUTES.result);
+              dispatch(addResultFieldToTeam({index: turn, result: arrayResults}))
+            } else {
+              setCurrentCartIndex(currentCardIndex + 1);
+              setArrayResults([...arrayResults, true]);
+            }
           }}
         >
           Нет
