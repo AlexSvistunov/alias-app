@@ -19,6 +19,7 @@ const GamePage = () => {
   const [arrayResults, setArrayResults] = useState([]);
   const [lastWord, setLastWord] = useState(false)
 
+
   const timeOutId = setTimeout(() => {
     setTime(time - 1);
   }, 1000);
@@ -50,15 +51,17 @@ const GamePage = () => {
         <div
           className="button"
           onClick={() => {
-            if(lastWord) {
-              setCurrentCartIndex(currentCardIndex + 1);
-              setArrayResults([...arrayResults, true]);
-              navigate(ROUTES.result);
-              dispatch(addResultFieldToTeam({index: turn, result: arrayResults}))
-            } else {
-              setCurrentCartIndex(currentCardIndex + 1);
-              setArrayResults([...arrayResults, true]);
-            }
+           if(lastWord) {
+            const resultArray = [...arrayResults, true]
+            setArrayResults(resultArray);
+          
+            navigate(ROUTES.result);
+            dispatch(addResultFieldToTeam({index: turn, result: resultArray}))
+
+           } else {
+            setCurrentCartIndex(currentCardIndex + 1);
+            setArrayResults([...arrayResults, true]);
+           }
        
           }}
         >
@@ -68,14 +71,16 @@ const GamePage = () => {
           className="button"
           onClick={() => {
             if(lastWord) {
-              setCurrentCartIndex(currentCardIndex + 1);
-              setArrayResults([...arrayResults, true]);
-              navigate(ROUTES.result);
-              dispatch(addResultFieldToTeam({index: turn, result: arrayResults}))
-            } else {
-              setCurrentCartIndex(currentCardIndex + 1);
-              setArrayResults([...arrayResults, true]);
-            }
+            const resultArray = [...arrayResults, false]
+            setArrayResults(resultArray);
+          
+            navigate(ROUTES.result);
+            dispatch(addResultFieldToTeam({index: turn, result: resultArray}))
+
+           } else {
+            setCurrentCartIndex(currentCardIndex + 1);
+            setArrayResults([...arrayResults, false]);
+           }
           }}
         >
           Нет
