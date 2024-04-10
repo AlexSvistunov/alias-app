@@ -7,6 +7,7 @@ import { nextTurn, newCircleTurn } from "../store/slices/indexTurnSlice";
 import { ROUTES } from "../routes";
 
 import { useState } from "react";
+import { changeResult } from "../store/slices/teamSlice";
 
 const ResultPage = () => {
   const dispatch = useDispatch()
@@ -24,6 +25,7 @@ const ResultPage = () => {
 
   const [array, setArray] = useState(arr);
   console.log(array);
+  console.log(results);
 
   const changeInput = (index) => {
     setArray(prevArray => {
@@ -36,6 +38,14 @@ const ResultPage = () => {
 
       return list
     })
+  }
+
+  const changeResultHandler = () => {
+    const newResultArray = []
+    array.forEach((elResult) => {
+      newResultArray.push(elResult.result)
+    })
+    dispatch(changeResult({index: turn, newResult: newResultArray}))
   }
 
 
@@ -54,8 +64,10 @@ const ResultPage = () => {
       <Link style={{display: 'block', marginTop: '50px'}} to={ROUTES.score} onClick={() => {
         
           if(turn === teamList.length - 1) {
+            changeResultHandler()
             dispatch(newCircleTurn())
           } else {
+            changeResultHandler()
             dispatch(nextTurn())
           }
           // проверить количество команд

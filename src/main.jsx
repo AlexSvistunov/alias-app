@@ -24,5 +24,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 // победитель
 // какие-то флаги, запущена игра или нет, чтобы нельзя было переходить по ненужным роутам
 
+// wrong score
 // delete in createTeamPage
 // result checkbox functionality
