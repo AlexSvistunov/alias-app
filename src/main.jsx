@@ -27,3 +27,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 // wrong score
 // delete in createTeamPage
 // result checkbox functionality
+// score has already been and It's 9 before I changed it
+// winner check (if there's a winner - button play again and everything is gonna be again with the same team or what you choose)

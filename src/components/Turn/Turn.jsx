@@ -6,6 +6,7 @@ import { ROUTES } from "../../routes";
 
 const Turn = () => {
   const teamList = useSelector((state) => state.team.teamList);
+  console.log(teamList);
   const turn = useSelector((state) => state.turn.turn)
   const scoreForWin = useSelector(state => state.settings.settings.scoreForWin)
   console.log(scoreForWin);
