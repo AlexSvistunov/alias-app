@@ -44,7 +44,7 @@ const Turn = () => {
       <div className="container">
         <h2 className="turn__title section-title">Очередь команды</h2>
         <div className="turn__turned-team">
-          <img className="" src={`/src/assets/${teamList[turn].avatar}`}></img>
+          <img className="turn__turned-img" src={`/src/assets/${teamList[turn].avatar}`}></img>
           <span>{teamList[turn].name}</span>
         </div>
 
