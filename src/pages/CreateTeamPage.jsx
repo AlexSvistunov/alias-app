@@ -25,6 +25,7 @@ const CreateTeamPage = () => {
           people: membersList,
           color: "#0096ff",
           score: 0,
+          isWinner: false,
         })
       );
       navigate(ROUTES.teams);

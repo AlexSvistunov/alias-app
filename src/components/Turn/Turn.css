@@ -1,9 +1,19 @@
 .turn {
-
+  padding: 50px 0;
 }
 
+.turn__title {
+  text-align: center;
+}
 
 .turn__turned-team {
   max-width: fit-content;
   margin: 0 auto;
 }
+
+.turn__turned-img {
+  display: block;
+  /* border: 2px solid var(--violet-700); */
+}
+
+/* пульсация эффект */

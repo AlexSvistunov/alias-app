@@ -8,6 +8,7 @@ const initialState = {
       people: [],
       color: "#ff6347",
       score: 0,
+      isWinner: false,
     },
     {
       name: "Синие",
@@ -15,6 +16,7 @@ const initialState = {
       people: [],
       color: "#0096ff",
       score: 0,
+      isWinner: false,
     },
   ],
 };
@@ -54,9 +56,13 @@ const teamSlice = createSlice({
       state.teamList[action.payload.index].result = action.payload.newResult
       const amountOfTrue = action.payload.newResult.filter((el => el)).length
       state.teamList[action.payload.index].score += amountOfTrue
+    },
+
+    pickWinner : (state, action) => {
+      state.teamList[action.payload.index].isWinner = true
     }
   },
 });
 
 export default teamSlice.reducer;
-export const { addTeam, removeTeam, addResultFieldToTeam, changeName, addPerson, deletePerson, changeResult } = teamSlice.actions;
+export const { addTeam, removeTeam, addResultFieldToTeam, changeName, addPerson, deletePerson, changeResult, pickWinner } = teamSlice.actions;

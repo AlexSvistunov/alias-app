@@ -25,7 +25,7 @@ const Teams = () => {
   return (
     <section className="team">
       <div className="container">
-        <h3 className="team__title">Выбор команд</h3>
+        <h3 className="team__title section-title">Выбор команд</h3>
 
         <div className="team__list">
           {teamsList.map((team, index) => (
