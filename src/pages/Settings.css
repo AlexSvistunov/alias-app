@@ -1,0 +1,52 @@
+.settings.container {
+  padding: 50px 0;
+}
+
+.settings__wrapper {
+  padding: 50px 0;
+}
+
+.settings__title {
+  text-align: center;
+}
+
+.settings__subtitle {
+  font-size: 35px;
+  margin: 0;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.settings__inner {
+  display: flex;
+  align-items: center;
+  margin-bottom: 45px;
+  background-color: var(--violet-600);
+  border-radius: 15px;
+}
+
+.settings__inner button {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font-size: 30px;
+  padding: 15px 10px;
+}
+
+.settings__inner button.active {
+  background-color: var(--violet-200);
+  border-radius: 15px;
+}
+
+.settings__duration-btn {
+ flex: 1 1 33.333%;
+}
+
+.settings__score-btn {
+  flex: 1 1 20%;
+}
+
+
+

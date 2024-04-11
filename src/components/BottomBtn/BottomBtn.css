@@ -39,3 +39,7 @@
     color: var(--violet-800);
 }
 
+.btn__wrapper-settings svg path {
+    fill: var(--violet-800);
+}
+
