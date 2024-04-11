@@ -4,7 +4,9 @@ import Turn from "../components/Turn/Turn";
 const ScorePage = () => {
   
   return (
-    <Turn/>
+    <div style={{ height: "100vh", backgroundColor: "var(--violet-300)" }}>
+      <Turn/>
+    </div>
   );
 };
 
