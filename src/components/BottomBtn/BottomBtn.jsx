@@ -3,7 +3,15 @@ import "./BottomBtn.css";
 
 import { Link } from "react-router-dom";
 
-const BottomBtn = () => {
+const BottomBtn = ({from}) => {
+  if(from === 'score') {
+    return (
+      <div className="btn-wrapper">
+ 
+      <Link className="btn__wrapper-continue" to={ROUTES.game}>Продолжить</Link>
+    </div>
+    )
+  }
   return (
     <div className="btn-wrapper">
  
