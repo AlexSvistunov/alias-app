@@ -7,6 +7,9 @@ import { useNavigate } from "react-router-dom";
 import { changeName, addPerson, deletePerson } from "../store/slices/teamSlice";
 import { ROUTES } from "../routes";
 
+import "./TeamEditPage.css";
+import BottomBtn from "../components/BottomBtn/BottomBtn";
+
 const TeamEditPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -36,33 +39,40 @@ const TeamEditPage = () => {
   };
 
   const deletePersonHandler = (personId) => {
-    dispatch(deletePerson({index: id, personId}))
-  }
+    dispatch(deletePerson({ index: id, personId }));
+  };
 
   return (
-    <section className="edit">
-      <div className="container">
-        <h2>Редактор команды</h2>
+    <section
+      className="edit"
+      style={{ height: "100vh", backgroundColor: "var(--violet-300)" }}
+    >
+      <div className="container edit__inner">
+        <h2 className="edit__title section-title">Редактор команды</h2>
 
-        <label htmlFor="name">Название команды</label>
-        <input
-          name="name"
-          value={nameValue}
-          onChange={(e) => {
-            nameOnChange(e.target.value);
-          }}
-        ></input>
+        <div className="edit__field-wrapper">
+          <label htmlFor="name">Название команды</label>
+          <input
+            name="name"
+            value={nameValue}
+            onChange={(e) => {
+              nameOnChange(e.target.value);
+            }}
+          ></input>
+        </div>
 
-        <label htmlFor="members">Участник</label>
-        <input
-          name="members"
-          value={memberNameValue}
-          onChange={(e) => {
-            setMemberNameValue(e.target.value);
-          }}
-        ></input>
+        <div className="edit__field-wrapper">
+          <label htmlFor="members">Участник</label>
+          <input
+            name="members"
+            value={memberNameValue}
+            onChange={(e) => {
+              setMemberNameValue(e.target.value);
+            }}
+          ></input>
+        </div>
 
-        <button
+        <button className="edit__add"
           onClick={() => {
             addPersonHandler(memberNameValue);
           }}
@@ -70,19 +80,31 @@ const TeamEditPage = () => {
           Добавить участника
         </button>
 
-        <button onClick={applyChanges}>Готово</button>
 
-        {teamsListItem?.people?.length
-          ? teamsListItem?.people?.map((person, index) => (
-              <div key={person?.memberName}>
-                <span>{person?.memberName}</span>
-                <button onClick={() => {
-                  deletePersonHandler(index)
-                }}>X</button>
-              </div>
-            ))
-          : null}
+        <div className="edit__list">
+          {teamsListItem?.people?.length
+            ? teamsListItem?.people?.map((person, index) => (
+                <div className="edit__person" key={person?.memberName}>
+                  <span className="edit__person-name">
+                    {person?.memberName}
+                  </span>
+                  <button
+                    className="edit__person-delete"
+                    onClick={() => {
+                      deletePersonHandler(index);
+                    }}
+                  >
+                    X
+                  </button>
+                </div>
+              ))
+            : null}
+        </div>
       </div>
+
+      
+        {/* <button onClick={applyChanges}>Готово</button> */}
+        <BottomBtn from='team-edit'/>
     </section>
   );
 };

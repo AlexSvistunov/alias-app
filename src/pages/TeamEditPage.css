@@ -1,0 +1,86 @@
+.edit {
+  padding: 50px 0;
+}
+
+
+.edit input {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 28px;
+  color: var(--violet-700);
+}
+
+.edit input::placeholder {
+  font-size: 28px;
+  color: var(--violet-700);
+}
+
+.edit__field-wrapper {
+  margin-bottom: 25px;
+}
+
+.edit label {
+  display: block;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.edit__inner {
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.edit input:focus {
+  outline: 4px solid var(--violet-700);
+  box-shadow: 0 0 5px var(--violet-700);
+  
+}
+
+.edit__add {
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 18px;
+}
+
+.edit__person {
+  max-width: 650px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--violet-500);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.edit__person-name {
+  font-size: 25px;
+  color: white;
+
+}
+
+.edit__list {
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.edit__person-delete {
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+}

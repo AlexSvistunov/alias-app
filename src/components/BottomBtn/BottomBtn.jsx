@@ -12,6 +12,14 @@ const BottomBtn = ({from}) => {
     </div>
     )
   }
+
+  if(from === 'team-edit') {
+    return (
+      <div className="btn-wrapper">
+        <Link className="btn__wrapper-continue" to={ROUTES.teams}>Готово</Link>
+      </div>
+    )
+  }
   return (
     <div className="btn-wrapper">
  
