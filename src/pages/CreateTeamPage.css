@@ -1,0 +1,69 @@
+.create-team {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.create-team__title {
+  text-align: center;
+}
+
+.create-team__input {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 28px;
+  color: var(--violet-700);
+  margin-bottom: 15px;
+}
+
+.create-team__input:focus {
+  outline: 4px solid var(--violet-700);
+  box-shadow: 0 0 5px var(--violet-700);
+  
+}
+
+.create-team__list {
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.create-team__add {
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 18px;
+}
+
+.create-team__item {
+  max-width: 650px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--violet-500);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.create-team__name {
+  font-size: 25px;
+  color: white;
+}
+
+.create-team__delete {
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+}

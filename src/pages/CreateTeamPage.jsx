@@ -6,6 +6,8 @@ import { addTeam } from "../store/slices/teamSlice";
 import { removeTeam } from "../store/slices/teamSlice";
 import { ROUTES } from "../routes";
 
+import "./CreateTeamPage.css";
+
 const CreateTeamPage = () => {
   const [name, setName] = useState("");
   const [memberName, setMemberName] = useState("");
@@ -44,45 +46,68 @@ const CreateTeamPage = () => {
     }
   };
 
+  const deletePersonHandler = (index) => {
+    const prevList = [...membersList]
+    prevList.splice(index, 1)
+
+    setMembersList(prevList)
+  }
+
   // const deletePersonHandler = (personId) => {
   //   dispatch(deletePerson({index: id, personId}))
   // }
 
   return (
-    <div className="create-team">
-      <div className="container">
-        <h2 className="create-team__title">Создать команду</h2>
+    <div style={{ height: "100vh", backgroundColor: "var(--violet-300)" }}>
+      <div className="create-team">
+        <div className="container">
+          <h2 className="create-team__title section-title">Создать команду</h2>
 
-        <input
-          className="create-team__input"
-          placeholder="Введите название"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        ></input>
-        <input
-          className="create-team__input"
-          placeholder="Имя участника"
-          value={memberName}
-          onChange={(e) => setMemberName(e.target.value)}
-        ></input>
-        <button onClick={addMember}>Добавить участника</button>
+          <input
+            className="create-team__input"
+            placeholder="Введите название"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          ></input>
+          <input
+            className="create-team__input"
+            placeholder="Имя участника"
+            value={memberName}
+            onChange={(e) => setMemberName(e.target.value)}
+          ></input>
+          <button className="create-team__add" onClick={addMember}>
+            Добавить участника
+          </button>
 
-        {membersList.length &&
-          membersList.map((member) => (
-            <div key={member.memberName}>
-              <span>{member.memberName}</span>
-              <button onClick={() => {
-                // deletePersonHandler(index)
-              }}>X</button>
+          {
+            <div className="create-team__list">
+              {membersList.length
+                ? membersList.map((member, index) => (
+                    <div className="create-team__item" key={member.memberName}>
+                      <span className="create-team__name">
+                        {member.memberName}
+                      </span>
+                      <button
+                        className="create-team__delete"
+                        onClick={() => {
+                          deletePersonHandler(index)
+                        }}
+                      >
+                        X
+                      </button>
+                    </div>
+                  ))
+                : null}
             </div>
-          ))}
+          }
 
-        <button
-          onClick={createTeam}
-          style={{ display: "block", marginTop: "50px" }}
-        >
-          Создать команду
-        </button>
+          <button
+            onClick={createTeam}
+            style={{ display: "block", marginTop: "50px" }}
+          >
+            Создать команду
+          </button>
+        </div>
       </div>
     </div>
   );
