@@ -20,6 +20,8 @@ const BottomBtn = ({from}) => {
       </div>
     )
   }
+
+
   return (
     <div className="btn-wrapper">
  

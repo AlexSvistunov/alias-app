@@ -14,6 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 }
 
 .card {
@@ -26,6 +27,8 @@
   border-radius: 25px;
   font-size: 35px;
   border: 4px solid white;
+  z-index: 99;
+  background-color: var(--violet-400);
 }
 
 .buttons {
@@ -39,3 +42,17 @@
   font-size: 35px;
   cursor: pointer;
 }
+/* 
+.card-next {
+  position: absolute;
+  width: 50%;
+  height: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  font-size: 35px;
+  border: 4px solid white;
+  z-index: 50;
+  background-color: var(--violet-400);
+} */

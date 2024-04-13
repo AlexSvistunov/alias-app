@@ -21,6 +21,7 @@ const GamePage = () => {
   const [arrayResults, setArrayResults] = useState([]);
   const [lastWord, setLastWord] = useState(false);
 
+
   console.log(lastWord);
 
   const timeOutId = setTimeout(() => {
@@ -51,11 +52,13 @@ const GamePage = () => {
         <div className="time">{lastWord ? "последнее слово" : time}</div>
 
         <div className="cards">
+         
           <div className="card">{words[currentCardIndex]}</div>
-          {/* {words.map((word) => {
-        
-       })} */}
+          {/* <div className="card-next"></div> */}
+         
         </div>
+
+  
 
         <div className="buttons">
           <div

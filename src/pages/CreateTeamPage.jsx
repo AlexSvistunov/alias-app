@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { addTeam } from "../store/slices/teamSlice";
 import { removeTeam } from "../store/slices/teamSlice";
 import { ROUTES } from "../routes";
 
 import "./CreateTeamPage.css";
+import "../components/BottomBtn/BottomBtn.css";
+
 
 const CreateTeamPage = () => {
   const [name, setName] = useState("");
@@ -101,12 +103,9 @@ const CreateTeamPage = () => {
             </div>
           }
 
-          <button
-            onClick={createTeam}
-            style={{ display: "block", marginTop: "50px" }}
-          >
-            Создать команду
-          </button>
+          <div className="btn-wrapper">
+            <button className="btn__wrapper-continue" onClick={createTeam}>Создать команду</button>
+          </div>
         </div>
       </div>
     </div>
