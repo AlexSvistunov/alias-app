@@ -25,7 +25,7 @@ const CreateTeamPage = () => {
       dispatch(
         addTeam({
           name,
-          avatar: "cat.png",
+          avatar: "avocado.png",
           people: membersList,
           color: "#0096ff",
           score: 0,

@@ -17,6 +17,11 @@
 
 }
 
+.turn__turned-img {
+  width: 100px;
+  height: 100px;
+}
+
 .turn__turned-circle {
   width: 130px;
   height: 130px;

@@ -4,7 +4,7 @@ const initialState = {
   teamList: [
     {
       name: "Красные",
-      avatar: "cat.png",
+      avatar: "avocado.png",
       people: [],
       color: "#ff6347",
       score: 0,
@@ -12,7 +12,7 @@ const initialState = {
     },
     {
       name: "Синие",
-      avatar: "chick.png",
+      avatar: "tomato.png",
       people: [],
       color: "#0096ff",
       score: 0,
@@ -59,7 +59,10 @@ const teamSlice = createSlice({
     },
 
     pickWinner : (state, action) => {
-      state.teamList[action.payload.index].isWinner = true
+      const name = action.payload.name
+
+      const index = state.teamList.findIndex(team => team.name === name)
+      state.teamList[index].isWinner = true
     }
   },
 });

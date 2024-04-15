@@ -72,14 +72,14 @@ const TeamEditPage = () => {
           ></input>
         </div>
 
-        <button className="edit__add"
+        <button
+          className="edit__add"
           onClick={() => {
             addPersonHandler(memberNameValue);
           }}
         >
           Добавить участника
         </button>
-
 
         <div className="edit__list">
           {teamsListItem?.people?.length
@@ -100,11 +100,62 @@ const TeamEditPage = () => {
               ))
             : null}
         </div>
+
+        <div className="edit__color">
+          <h3 className="edit__color-title">Цвет фона</h3>
+          <div className="edit__color-list">
+            <div className="edit__color-item edit-item">
+              <div className="edit-item__circle">
+                <div className="edit-item__color edit-item__color--pink"></div>
+              </div>
+            </div>
+
+            <div className="edit__color-item edit-item">
+              <div className="edit-item__circle">
+                <div className="edit-item__color edit-item__color--blue"></div>
+              </div>
+            </div>
+
+            <div className="edit__color-item edit-item">
+              <div className="edit-item__circle">
+                <div className="edit-item__color edit-item__color--yellow"></div>
+              </div>
+            </div>
+
+            <div className="edit__color-item edit-item">
+              <div className="edit-item__circle">
+                <div className="edit-item__color edit-item__color--green"></div>
+              </div>
+            </div>
+
+            <div className="edit__color-item edit-item">
+              <div className="edit-item__circle">
+                <div className="edit-item__color edit-item__color--red"></div>
+              </div>
+            </div>
+
+            <div className="edit__color-item edit-item">
+              <div className="edit-item__circle">
+                <div className="edit-item__color edit-item__color--purple"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="edit__avatar">
+          <h3 className="edit__avatar-title">Аватарка</h3>
+          
+          <div className="edit__avatar-items">
+            <div className="edit__avatar-item">
+              <div className="edit__avatar-circle">
+                <div className="edit__avatar-img"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      
-        {/* <button onClick={applyChanges}>Готово</button> */}
-        <BottomBtn from='team-edit'/>
+      {/* <button onClick={applyChanges}>Готово</button> */}
+      <BottomBtn from="team-edit" />
     </section>
   );
 };

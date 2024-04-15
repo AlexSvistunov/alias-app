@@ -21,3 +21,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 // логика победителя
 // запрет роутов, возможно по флагам
 // localStorage
+
+
+// ideas:
+// random avatar when creating new team
+// limit 4-6 team when creating teams
+// добавить блики типо выбери цвет чел

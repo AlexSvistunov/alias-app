@@ -21,6 +21,14 @@ const BottomBtn = ({from}) => {
     )
   }
 
+  if(from === 'score-winner') {
+    return (
+      <div className="btn-wrapper">
+      <a className="btn__wrapper-continue" href={ROUTES.teams}>Начать заново</a>
+    </div>
+    )
+  }
+
 
   return (
     <div className="btn-wrapper">
