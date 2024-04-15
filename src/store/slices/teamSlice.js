@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   teamList: [
     {
-      name: "Красные",
+      name: "Тьма",
       avatar: "avocado.png",
       people: [],
       color: "#ff6347",
@@ -11,7 +11,7 @@ const initialState = {
       isWinner: false,
     },
     {
-      name: "Синие",
+      name: "Свет",
       avatar: "tomato.png",
       people: [],
       color: "#0096ff",

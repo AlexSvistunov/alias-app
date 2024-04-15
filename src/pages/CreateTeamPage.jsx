@@ -27,7 +27,7 @@ const CreateTeamPage = () => {
           name,
           avatar: "avocado.png",
           people: membersList,
-          color: "#0096ff",
+          color: "rgb(251, 56, 34)",
           score: 0,
           isWinner: false,
         })

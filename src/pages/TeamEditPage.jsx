@@ -19,8 +19,11 @@ const TeamEditPage = () => {
 
   const [nameValue, setNameValue] = useState(teamsListItem.name);
   const [memberNameValue, setMemberNameValue] = useState("");
-  console.log(nameValue);
+  
+  const [color, setColor] = useState('rgb(251, 56, 34)')
+  const [avatar, setAvatar] = useState('avocado.png')
 
+  
   const nameOnChange = (value) => {
     setNameValue(value);
   };
@@ -104,6 +107,11 @@ const TeamEditPage = () => {
         <div className="edit__color">
           <h3 className="edit__color-title">Цвет фона</h3>
           <div className="edit__color-list">
+            <div className="edit__color-item edit-item edit__color-item--active">
+              <div className="edit-item__circle">
+                <div className="edit-item__color edit-item__color--red"></div>
+              </div>
+            </div>
             <div className="edit__color-item edit-item">
               <div className="edit-item__circle">
                 <div className="edit-item__color edit-item__color--pink"></div>
@@ -130,12 +138,6 @@ const TeamEditPage = () => {
 
             <div className="edit__color-item edit-item">
               <div className="edit-item__circle">
-                <div className="edit-item__color edit-item__color--red"></div>
-              </div>
-            </div>
-
-            <div className="edit__color-item edit-item">
-              <div className="edit-item__circle">
                 <div className="edit-item__color edit-item__color--purple"></div>
               </div>
             </div>
@@ -143,11 +145,137 @@ const TeamEditPage = () => {
         </div>
         <div className="edit__avatar">
           <h3 className="edit__avatar-title">Аватарка</h3>
-          
+
           <div className="edit__avatar-items">
+            <div className="edit__avatar-item edit__avatar-item--active">
+              <div className="edit__avatar-circle">
+                <div className="edit__avatar-img">
+                  <img
+                    className="edit__avatar-image"
+                    src="/src/assets/avocado.png"
+                  ></img>
+                </div>
+              </div>
+            </div>
+
             <div className="edit__avatar-item">
               <div className="edit__avatar-circle">
-                <div className="edit__avatar-img"></div>
+                <div className="edit__avatar-img">
+                  <img
+                    className="edit__avatar-image"
+                    src="/src/assets/banana.png"
+                  ></img>
+                </div>
+              </div>
+            </div>
+
+            <div className="edit__avatar-item">
+              <div className="edit__avatar-circle">
+                <div className="edit__avatar-img">
+                  <img
+                    className="edit__avatar-image"
+                    src="/src/assets/bread.png"
+                  ></img>
+                </div>
+              </div>
+            </div>
+
+            <div className="edit__avatar-item">
+              <div className="edit__avatar-circle">
+                <div className="edit__avatar-img">
+                  <img
+                    className="edit__avatar-image"
+                    src="/src/assets/broccoli.png"
+                  ></img>
+                </div>
+              </div>
+            </div>
+
+            <div className="edit__avatar-item">
+              <div className="edit__avatar-circle">
+                <div className="edit__avatar-img">
+                  <img
+                    className="edit__avatar-image"
+                    src="/src/assets/cake.png"
+                  ></img>
+                </div>
+              </div>
+            </div>
+
+            <div className="edit__avatar-item">
+              <div className="edit__avatar-circle">
+                <div className="edit__avatar-img">
+                  <img
+                    className="edit__avatar-image"
+                    src="/src/assets/carrot.png"
+                  ></img>
+                </div>
+              </div>
+            </div>
+
+            {/* <div className="edit__avatar-item">
+              <div className="edit__avatar-circle">
+                <div className="edit__avatar-img">
+                  <img
+                    className="edit__avatar-image"
+                    src="/src/assets/chili.png"
+                  ></img>
+                </div>
+              </div>
+            </div> */}
+
+            <div className="edit__avatar-item">
+              <div className="edit__avatar-circle">
+                <div className="edit__avatar-img">
+                  <img
+                    className="edit__avatar-image"
+                    src="/src/assets/donut.png"
+                  ></img>
+                </div>
+              </div>
+            </div>
+
+            {/* <div className="edit__avatar-item">
+              <div className="edit__avatar-circle">
+                <div className="edit__avatar-img">
+                  <img
+                    className="edit__avatar-image"
+                    src="/src/assets/eggs.png"
+                  ></img>
+                </div>
+              </div>
+            </div> */}
+
+            <div className="edit__avatar-item">
+              <div className="edit__avatar-circle">
+                <div className="edit__avatar-img">
+                  <img
+                    className="edit__avatar-image"
+                    src="/src/assets/muffin.png"
+                  ></img>
+                </div>
+              </div>
+            </div>
+
+            <div className="edit__avatar-item">
+              <div className="edit__avatar-circle">
+                <div className="edit__avatar-img">
+                  <img
+                    className="edit__avatar-image"
+                    src="/src/assets/mushroom.png"
+                  ></img>
+                </div>
+              </div>
+            </div>
+
+            <div className="edit__avatar-item">
+              <div className="edit__avatar-circle">
+                <div className="edit__avatar-img">
+                  <img
+                    className="edit__avatar-image"
+                    src="/src/assets/pasta.png"
+                  ></img>
+                </div>
               </div>
             </div>
           </div>
