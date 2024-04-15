@@ -88,8 +88,8 @@ const ResultPage = () => {
 
         {/* NO CONNECTION BETWEEN CHECKED AND LEFT POSITION */}
 
-        <Link
-          style={{ display: "block", marginTop: "50px" }}
+       <div className="btn-wrapper">
+       <Link className="btn__wrapper-continue result__continue"
           to={ROUTES.score}
           onClick={() => {
             if (turn === teamList.length - 1) {
@@ -106,6 +106,7 @@ const ResultPage = () => {
         >
           Продолжить
         </Link>
+       </div>
       </div>
     </div>
   );

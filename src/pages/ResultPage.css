@@ -59,6 +59,10 @@
   transition: .4s;
 }
 
+.result__continue {
+  
+}
+
 /* .custom-checkbox::after {
   content: '';
   position: absolute;
