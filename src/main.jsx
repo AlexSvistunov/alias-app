@@ -22,6 +22,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 // запрет роутов, возможно по флагам
 // localStorage
 // edit-team button position: fixed
+// когда команда побеждает, active(подсветка) на ней
 
 
 // ideas:

@@ -22,33 +22,37 @@ const Turn = () => {
 
   const winTeams = teamList.filter((team) => team.score >= scoreForWin);
   if (winTeams.length === 1 && turn === 0) {
-    // alert(winTeams[0].name)
-    // console.log(winTeams);
-    // const id = winTeams
     dispatch(pickWinner({ name: winTeams[0].name }));
   }
   if (winTeams.length > 1 && turn === 0) {
-    // console.log("Победителей несколько, ща узнаем у кого больше очков");
-    const team1 = winTeams[0];
-    const team2 = winTeams[1];
+    let max = 0;
 
-    if (team1.score > team2.score) {
-      dispatch(pickWinner({ name: team1.name }));
+    winTeams.forEach((team) => {
+      if (max < team.score) {
+        max = team.score;
+      }
+
+    });
+
+    console.log(max);
+
+    const itemWithMaxScore = winTeams.filter(team => team.score === max)
+    if(itemWithMaxScore.length === 1) {
+      dispatch(pickWinner({ name: itemWithMaxScore[0].name }));
     }
 
-    if (team1.score < team2.score) {
-      dispatch(pickWinner({ name: team2.name }));
-    }
+
   }
-  console.log(winTeams);  
+  console.log(winTeams);
 
   const smdIsWinner = teamList.find((team) => team.isWinner === true);
   console.log(smdIsWinner);
+
   useEffect(() => {
-    if(smdIsWinner) {
+    if (smdIsWinner) {
       confetti();
     }
-  }, [smdIsWinner])
+  }, [smdIsWinner]);
 
   return (
     <section className="turn">
