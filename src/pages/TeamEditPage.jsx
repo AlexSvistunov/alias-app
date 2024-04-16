@@ -20,7 +20,7 @@ const TeamEditPage = () => {
   const [nameValue, setNameValue] = useState(teamsListItem.name);
   const [memberNameValue, setMemberNameValue] = useState("");
   
-  const [color, setColor] = useState('rgb(251, 56, 34)')
+  const [color, setColor] = useState(['Red', 'rgb(251, 56, 34)'])
   const [avatar, setAvatar] = useState('avocado.png')
 
   
@@ -44,6 +44,20 @@ const TeamEditPage = () => {
   const deletePersonHandler = (personId) => {
     dispatch(deletePerson({ index: id, personId }));
   };
+
+  const colorActiveHandler = (color, rgbColor) => {
+    setColor([color, rgbColor])
+    // console.log(element);
+    // const items = document.querySelectorAll('.edit__color-item')
+    // console.log(items);
+    // items.forEach((item) => {
+    //   item.classList.remove('edit__color-item--active')
+
+    // })
+
+    // element.classList.add('edit__color-item--active')
+
+  }
 
   return (
     <section
@@ -107,36 +121,37 @@ const TeamEditPage = () => {
         <div className="edit__color">
           <h3 className="edit__color-title">Цвет фона</h3>
           <div className="edit__color-list">
-            <div className="edit__color-item edit-item edit__color-item--active">
+          {/* <div className="edit__color-item edit-item edit__color-item--active" onClick={() => colorActiveHandler('Красный', 'rgb(251, 56, 34)')}> */}
+            <div className={color[0] === 'Red' ? 'edit__color-item edit-item edit__color-item--active' : 'edit__color-item edit-item'} onClick={() => colorActiveHandler('Red', 'rgb(251, 56, 34)')}>
               <div className="edit-item__circle">
                 <div className="edit-item__color edit-item__color--red"></div>
               </div>
             </div>
-            <div className="edit__color-item edit-item">
+            <div className={color[0] === 'Pink' ? 'edit__color-item edit-item edit__color-item--active' : 'edit__color-item edit-item'} onClick={(e) => colorActiveHandler('Pink', '#c960be')}>
               <div className="edit-item__circle">
                 <div className="edit-item__color edit-item__color--pink"></div>
               </div>
             </div>
 
-            <div className="edit__color-item edit-item">
+            <div className={color[0] === 'Blue' ? 'edit__color-item edit-item edit__color-item--active' : 'edit__color-item edit-item'} onClick={(e) => colorActiveHandler('Blue', 'rgb(25, 132, 246)')}>
               <div className="edit-item__circle">
                 <div className="edit-item__color edit-item__color--blue"></div>
               </div>
             </div>
-
-            <div className="edit__color-item edit-item">
+ 
+            <div className={color[0] === 'Yellow' ? 'edit__color-item edit-item edit__color-item--active' : 'edit__color-item edit-item'} onClick={(e) => colorActiveHandler('Yellow', 'rgb(207, 244, 0)')}>
               <div className="edit-item__circle">
                 <div className="edit-item__color edit-item__color--yellow"></div>
               </div>
             </div>
 
-            <div className="edit__color-item edit-item">
+            <div className={color[0] === 'Green' ? 'edit__color-item edit-item edit__color-item--active' : 'edit__color-item edit-item'} onClick={(e) => colorActiveHandler('Green', 'rgb(71, 251, 71)')}>
               <div className="edit-item__circle">
                 <div className="edit-item__color edit-item__color--green"></div>
               </div>
             </div>
 
-            <div className="edit__color-item edit-item">
+            <div className={color[0] === 'Purple' ? 'edit__color-item edit-item edit__color-item--active' : 'edit__color-item edit-item'} onClick={(e) => colorActiveHandler('Purple', 'rgb(140 22 186)')}>
               <div className="edit-item__circle">
                 <div className="edit-item__color edit-item__color--purple"></div>
               </div>
