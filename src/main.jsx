@@ -16,18 +16,16 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 
 
-// аватарки
-// цвета
-// логика победителя
+
 // запрет роутов, возможно по флагам
 // localStorage
-// edit-team button position: fixed
 // когда команда побеждает, active(подсветка) на ней
-// связь настроек и хранилища
 // отнимать очки за пропуск
 // рандомная аватарка + рандомный цвет
-// законнектить edit-team color, edit-team avatar с реальной аватаркой
-
+// законнектить edit-team avatar с реальной аватаркой
+// ограничение по кол-ву человек в команде
+// стирать input
+// pages and components
 
 // ideas:
 // random avatar when creating new team

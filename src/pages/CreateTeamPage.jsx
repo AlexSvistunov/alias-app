@@ -22,7 +22,13 @@ const CreateTeamPage = () => {
   const navigate = useNavigate();
   const teamList = useSelector((state) => state.team.teamList);
 
+
   const createTeam = () => {
+    if(teamList.length >= 5) {
+      alert('Нельзя создать больше, чем 5 команд')
+      return
+    }
+
     if (name) {
       dispatch(
         addTeam({
