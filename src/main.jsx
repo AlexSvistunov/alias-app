@@ -23,6 +23,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 // localStorage
 // edit-team button position: fixed
 // когда команда побеждает, active(подсветка) на ней
+// связь настроек и хранилища
+// отнимать очки за пропуск
 
 
 // ideas:

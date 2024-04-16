@@ -7,9 +7,12 @@ import {
 import { ROUTES } from "../routes";
 
 import "./Settings.css";
+import BottomBtn from "../components/BottomBtn/BottomBtn";
 
 const SettingsPage = () => {
   const dispatch = useDispatch();
+  const {roundDuration, scoreForWin} = useSelector(state => state.settings.settings)
+
 
   return (
     <div style={{ height: "100vh", backgroundColor: "var(--violet-300)" }}>
@@ -21,7 +24,7 @@ const SettingsPage = () => {
 
           <div className="settings__inner">
             <button
-              className="settings__duration-btn"
+              className={roundDuration === 20 ? 'settings__duration-btn active' : 'settings__duration-btn'}
               onClick={(e) => {
                 const settingsDurationBtns = document.querySelectorAll(
                   ".settings__duration-btn"
@@ -37,7 +40,7 @@ const SettingsPage = () => {
               20
             </button>
             <button
-              className="settings__duration-btn"
+              className={roundDuration === 30 ? 'settings__duration-btn active' : 'settings__duration-btn'}
               onClick={(e) => {
                 const settingsDurationBtns = document.querySelectorAll(
                   ".settings__duration-btn"
@@ -52,7 +55,7 @@ const SettingsPage = () => {
               30
             </button>
             <button
-              className="settings__duration-btn active"
+               className={roundDuration === 60 ? 'settings__duration-btn active' : 'settings__duration-btn'}
               onClick={(e) => {
                 const settingsDurationBtns = document.querySelectorAll(
                   ".settings__duration-btn"
@@ -67,7 +70,7 @@ const SettingsPage = () => {
               60
             </button>
             <button
-              className="settings__duration-btn"
+               className={roundDuration === 90 ? 'settings__duration-btn active' : 'settings__duration-btn'}
               onClick={(e) => {
                 const settingsDurationBtns = document.querySelectorAll(
                   ".settings__duration-btn"
@@ -87,7 +90,7 @@ const SettingsPage = () => {
 
           <div className="settings__inner">
             <button
-              className="settings__score-btn"
+              className={scoreForWin === 10 ? 'settings__score-btn active' : 'settings__score-btn'}
               onClick={(e) => {
                 const settingsScoreBtns = document.querySelectorAll(
                   ".settings__score-btn"
@@ -104,7 +107,7 @@ const SettingsPage = () => {
             </button>
 
             <button
-              className="settings__score-btn active"
+             className={scoreForWin === 30 ? 'settings__score-btn active' : 'settings__score-btn'}
               onClick={(e) => {
                 const settingsScoreBtns = document.querySelectorAll(
                   ".settings__score-btn"
@@ -121,7 +124,7 @@ const SettingsPage = () => {
             </button>
 
             <button
-              className="settings__score-btn"
+              className={scoreForWin === 50 ? 'settings__score-btn active' : 'settings__score-btn'}
               onClick={(e) => {
                 const settingsScoreBtns = document.querySelectorAll(
                   ".settings__score-btn"
@@ -138,7 +141,7 @@ const SettingsPage = () => {
             </button>
 
             <button
-              className="settings__score-btn"
+               className={scoreForWin === 75 ? 'settings__score-btn active' : 'settings__score-btn'}
               onClick={(e) => {
                 const settingsScoreBtns = document.querySelectorAll(
                   ".settings__score-btn"
@@ -155,7 +158,7 @@ const SettingsPage = () => {
             </button>
 
             <button
-              className="settings__score-btn"
+               className={scoreForWin === 100 ? 'settings__score-btn active' : 'settings__score-btn'}
               onClick={(e) => {
                 const settingsScoreBtns = document.querySelectorAll(
                   ".settings__score-btn"
@@ -172,12 +175,9 @@ const SettingsPage = () => {
             </button>
           </div>
 
-          {/* <div>
-            Отнимать очки за пропуск
-            <input type="checkbox"></input>
-          </div> */}
 
-          {/* <Link to={ROUTES.teams}>Продолжить</Link> */}
+
+          <BottomBtn from={'settings-page'}/>
 
           
         </div>

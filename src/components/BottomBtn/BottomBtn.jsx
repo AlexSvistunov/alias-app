@@ -29,6 +29,15 @@ const BottomBtn = ({from}) => {
     )
   }
 
+  if(from === 'settings-page') {
+    return (
+      <div className="btn-wrapper">
+ 
+      <Link className="btn__wrapper-continue" to={ROUTES.teams}>Применить настройки</Link>
+    </div>
+    )
+  }
+
 
   return (
     <div className="btn-wrapper">

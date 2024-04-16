@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   settings: {
-    roundDuration: 3,
-    scoreForWin: 4,
+    roundDuration: 60,
+    scoreForWin: 30,
   }
 }
 
