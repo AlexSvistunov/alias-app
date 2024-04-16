@@ -9,6 +9,8 @@ import { ROUTES } from "../routes";
 import "./CreateTeamPage.css";
 import "../components/BottomBtn/BottomBtn.css";
 
+import { v4 as uuidv4 } from 'uuid';
+
 
 const CreateTeamPage = () => {
   const [name, setName] = useState("");
@@ -30,6 +32,7 @@ const CreateTeamPage = () => {
           color: "rgb(251, 56, 34)",
           score: 0,
           isWinner: false,
+          id: uuidv4(),
         })
       );
       navigate(ROUTES.teams);

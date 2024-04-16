@@ -47,22 +47,17 @@ const TeamEditPage = () => {
 
   const colorActiveHandler = (color, rgbColor) => {
     setColor([color, rgbColor])
-    // console.log(element);
-    // const items = document.querySelectorAll('.edit__color-item')
-    // console.log(items);
-    // items.forEach((item) => {
-    //   item.classList.remove('edit__color-item--active')
-
-    // })
-
-    // element.classList.add('edit__color-item--active')
-
   }
+
+  const avatarActiveHandler = (avatar) => {
+    setAvatar(avatar)
+  }
+
 
   return (
     <section
       className="edit"
-      style={{ height: "100vh", backgroundColor: "var(--violet-300)" }}
+      style={{ minHeight: "100vh", backgroundColor: "var(--violet-300)" }}
     >
       <div className="container edit__inner">
         <h2 className="edit__title section-title">Редактор команды</h2>
@@ -162,7 +157,8 @@ const TeamEditPage = () => {
           <h3 className="edit__avatar-title">Аватарка</h3>
 
           <div className="edit__avatar-items">
-            <div className="edit__avatar-item edit__avatar-item--active">
+          {/* <div className="edit__avatar-item edit__avatar-item--active"> */}
+            <div className={avatar === 'avocado.png' ? 'edit__avatar-item edit__avatar-item--active' : 'edit__avatar-item'} onClick={() => avatarActiveHandler('avocado.png')}>
               <div className="edit__avatar-circle">
                 <div className="edit__avatar-img">
                   <img
@@ -173,7 +169,7 @@ const TeamEditPage = () => {
               </div>
             </div>
 
-            <div className="edit__avatar-item">
+            <div className={avatar === 'banana.png' ? 'edit__avatar-item edit__avatar-item--active' : 'edit__avatar-item'}  onClick={() => avatarActiveHandler('banana.png')}>
               <div className="edit__avatar-circle">
                 <div className="edit__avatar-img">
                   <img
@@ -184,7 +180,7 @@ const TeamEditPage = () => {
               </div>
             </div>
 
-            <div className="edit__avatar-item">
+            <div className={avatar === 'bread.png' ? 'edit__avatar-item edit__avatar-item--active' : 'edit__avatar-item'}  onClick={() => avatarActiveHandler('bread.png')}>
               <div className="edit__avatar-circle">
                 <div className="edit__avatar-img">
                   <img
@@ -195,7 +191,7 @@ const TeamEditPage = () => {
               </div>
             </div>
 
-            <div className="edit__avatar-item">
+            <div className={avatar === 'broccoli.png' ? 'edit__avatar-item edit__avatar-item--active' : 'edit__avatar-item'}  onClick={() => avatarActiveHandler('broccoli.png')}>
               <div className="edit__avatar-circle">
                 <div className="edit__avatar-img">
                   <img
@@ -206,7 +202,7 @@ const TeamEditPage = () => {
               </div>
             </div>
 
-            <div className="edit__avatar-item">
+            <div className={avatar === 'cake.png' ? 'edit__avatar-item edit__avatar-item--active' : 'edit__avatar-item'} onClick={() => avatarActiveHandler('cake.png')}>
               <div className="edit__avatar-circle">
                 <div className="edit__avatar-img">
                   <img
@@ -217,7 +213,7 @@ const TeamEditPage = () => {
               </div>
             </div>
 
-            <div className="edit__avatar-item">
+            <div className={avatar === 'carrot.png' ? 'edit__avatar-item edit__avatar-item--active' : 'edit__avatar-item'} onClick={() => avatarActiveHandler('carrot.png')}>
               <div className="edit__avatar-circle">
                 <div className="edit__avatar-img">
                   <img
@@ -239,7 +235,7 @@ const TeamEditPage = () => {
               </div>
             </div> */}
 
-            <div className="edit__avatar-item">
+            <div className={avatar === 'donut.png' ? 'edit__avatar-item edit__avatar-item--active' : 'edit__avatar-item'} onClick={() => avatarActiveHandler('donut.png')}>
               <div className="edit__avatar-circle">
                 <div className="edit__avatar-img">
                   <img
@@ -261,7 +257,7 @@ const TeamEditPage = () => {
               </div>
             </div> */}
 
-            <div className="edit__avatar-item">
+            <div className={avatar === 'muffin.png' ? 'edit__avatar-item edit__avatar-item--active' : 'edit__avatar-item'} onClick={() => avatarActiveHandler('muffin.png')}>
               <div className="edit__avatar-circle">
                 <div className="edit__avatar-img">
                   <img
@@ -272,7 +268,7 @@ const TeamEditPage = () => {
               </div>
             </div>
 
-            <div className="edit__avatar-item">
+            <div className={avatar === 'mushroom.png' ? 'edit__avatar-item edit__avatar-item--active' : 'edit__avatar-item'} onClick={() => avatarActiveHandler('mushroom.png')}>
               <div className="edit__avatar-circle">
                 <div className="edit__avatar-img">
                   <img
@@ -283,7 +279,7 @@ const TeamEditPage = () => {
               </div>
             </div>
 
-            <div className="edit__avatar-item">
+            <div className={avatar === 'pasta.png' ? 'edit__avatar-item edit__avatar-item--active' : 'edit__avatar-item'} onClick={() => avatarActiveHandler('pasta.png')}>
               <div className="edit__avatar-circle">
                 <div className="edit__avatar-img">
                   <img
@@ -295,10 +291,11 @@ const TeamEditPage = () => {
             </div>
           </div>
         </div>
+        <button className="edit__btn" onClick={applyChanges}>Готово</button>
       </div>
 
-      {/* <button onClick={applyChanges}>Готово</button> */}
-      <BottomBtn from="team-edit" />
+
+      {/* <BottomBtn from="team-edit" /> */}
     </section>
   );
 };

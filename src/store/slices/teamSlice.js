@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+import { v4 as uuidv4 } from 'uuid';
+
 const initialState = {
   teamList: [
     {
@@ -9,6 +11,7 @@ const initialState = {
       color: "#ff6347",
       score: 0,
       isWinner: false,
+      id: uuidv4(),
     },
     {
       name: "Свет",
@@ -17,6 +20,7 @@ const initialState = {
       color: "#0096ff",
       score: 0,
       isWinner: false,
+      id: uuidv4(),
     },
   ],
 };

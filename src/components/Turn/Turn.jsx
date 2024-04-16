@@ -22,6 +22,9 @@ const Turn = () => {
 
   const winTeams = teamList.filter((team) => team.score >= scoreForWin);
   if (winTeams.length === 1 && turn === 0) {
+    // alert(winTeams[0].name)
+    // console.log(winTeams);
+    // const id = winTeams
     dispatch(pickWinner({ name: winTeams[0].name }));
   }
   if (winTeams.length > 1 && turn === 0) {
@@ -39,7 +42,8 @@ const Turn = () => {
   }
   console.log(winTeams);  
 
-  const smdIsWinner = teamList.find((team) => team.isWinner);
+  const smdIsWinner = teamList.find((team) => team.isWinner === true);
+  console.log(smdIsWinner);
   useEffect(() => {
     if(smdIsWinner) {
       confetti();
@@ -56,10 +60,10 @@ const Turn = () => {
               <div className="turn__turned-circle">
                 <img
                   className="turn__turned-img"
-                  src={`/src/assets/${teamList[turn].avatar}`}
+                  src={`/src/assets/${smdIsWinner.avatar}`}
                 ></img>
               </div>
-              <span className="turn__turned-name">{teamList[turn].name}</span>
+              <span className="turn__turned-name">{smdIsWinner.name}</span>
             </div>
 
             <div className="turn__teams">
