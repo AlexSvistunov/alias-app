@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { changeName, addPerson, deletePerson } from "../store/slices/teamSlice";
+import { changeFields, addPerson, deletePerson } from "../store/slices/teamSlice";
 import { ROUTES } from "../routes";
 
 import "./TeamEditPage.css";
@@ -30,7 +30,7 @@ const TeamEditPage = () => {
 
   const applyChanges = () => {
     if (nameValue) {
-      dispatch(changeName({ index: id, nameValue }));
+      dispatch(changeFields({ index: id, newName: nameValue, color: color[1], avatar }));
       navigate(ROUTES.teams);
     }
   };

@@ -8,7 +8,7 @@ const initialState = {
       name: "Тьма",
       avatar: "avocado.png",
       people: [],
-      color: "#ff6347",
+      color: "rgb(251, 56, 34)",
       score: 0,
       isWinner: false,
       id: uuidv4(),
@@ -17,7 +17,7 @@ const initialState = {
       name: "Свет",
       avatar: "tomato.png",
       people: [],
-      color: "#0096ff",
+      color: "rgb(25, 132, 246)",
       score: 0,
       isWinner: false,
       id: uuidv4(),
@@ -44,8 +44,10 @@ const teamSlice = createSlice({
       state.teamList.splice(action.payload, 1);
     },
 
-    changeName : (state, action) => {
-      state.teamList[action.payload.index].name = action.payload.nameValue
+    changeFields : (state, action) => {
+      state.teamList[action.payload.index].name = action.payload.newName
+      state.teamList[action.payload.index].color = action.payload.color
+      state.teamList[action.payload.index].avatar = action.payload.avatar
     },
 
     addPerson: (state, action) => {
@@ -72,4 +74,4 @@ const teamSlice = createSlice({
 });
 
 export default teamSlice.reducer;
-export const { addTeam, removeTeam, addResultFieldToTeam, changeName, addPerson, deletePerson, changeResult, pickWinner } = teamSlice.actions;
+export const { addTeam, removeTeam, addResultFieldToTeam, changeFields, addPerson, deletePerson, changeResult, pickWinner } = teamSlice.actions;
