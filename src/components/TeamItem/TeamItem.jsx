@@ -11,7 +11,7 @@ const TeamItem = ({ team, index, deleteTeam }) => {
         style={{ position: "absolute", inset: "0" }}
         to={`/edit-team/${index}`}
       />
-      <div className="team__circle" style={{ backgroundColor: team.color }}>
+      <div className="team__circle" style={{ backgroundColor: team.color[1]}}>
         <img className="team__img" src={`/src/assets/${team.avatar}`}></img>
 
         <div className="team__btn-circle">

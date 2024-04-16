@@ -26,6 +26,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 // связь настроек и хранилища
 // отнимать очки за пропуск
 // рандомная аватарка + рандомный цвет
+// законнектить edit-team color, edit-team avatar с реальной аватаркой
 
 
 // ideas:

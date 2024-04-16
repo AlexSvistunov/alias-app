@@ -16,12 +16,15 @@ const TeamEditPage = () => {
 
   const { id } = useParams();
   const teamsListItem = useSelector((state) => state.team.teamList)[id];
+  console.log(teamsListItem);
 
   const [nameValue, setNameValue] = useState(teamsListItem.name);
   const [memberNameValue, setMemberNameValue] = useState("");
   
-  const [color, setColor] = useState(['Red', 'rgb(251, 56, 34)'])
+  const [color, setColor] = useState(teamsListItem.color)
   const [avatar, setAvatar] = useState('avocado.png')
+
+  console.log(color);
 
   
   const nameOnChange = (value) => {
@@ -30,7 +33,7 @@ const TeamEditPage = () => {
 
   const applyChanges = () => {
     if (nameValue) {
-      dispatch(changeFields({ index: id, newName: nameValue, color: color[1], avatar }));
+      dispatch(changeFields({ index: id, newName: nameValue, color, avatar }));
       navigate(ROUTES.teams);
     }
   };
