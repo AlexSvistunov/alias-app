@@ -15,7 +15,7 @@ const initialState = {
     },
     {
       name: "Свет",
-      avatar: "tomato.png",
+      avatar: "broccoli.png",
       people: [],
       color: ['Blue', "rgb(25, 132, 246)"],
       score: 0,

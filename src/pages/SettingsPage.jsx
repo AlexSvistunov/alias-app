@@ -13,7 +13,6 @@ const SettingsPage = () => {
   const dispatch = useDispatch();
   const {roundDuration, scoreForWin} = useSelector(state => state.settings.settings)
 
-
   return (
     <div style={{ height: "100vh", backgroundColor: "var(--violet-300)" }}>
       <div className="settings container">

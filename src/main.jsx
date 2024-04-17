@@ -16,13 +16,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 
 
-
 // запрет роутов, возможно по флагам
 // localStorage
-// когда команда побеждает, active(подсветка) на ней
 // отнимать очки за пропуск
 // рандомная аватарка + рандомный цвет
-// законнектить edit-team avatar с реальной аватаркой
 // ограничение по кол-ву человек в команде
 // стирать input
 // pages and components

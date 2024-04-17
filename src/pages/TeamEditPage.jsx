@@ -22,7 +22,7 @@ const TeamEditPage = () => {
   const [memberNameValue, setMemberNameValue] = useState("");
   
   const [color, setColor] = useState(teamsListItem.color)
-  const [avatar, setAvatar] = useState('avocado.png')
+  const [avatar, setAvatar] = useState(teamsListItem.avatar)
 
   console.log(color);
 
@@ -39,8 +39,17 @@ const TeamEditPage = () => {
   };
 
   const addPersonHandler = (person) => {
-    if (person) {
+    if (person && teamsListItem.people.length < 5) {
       dispatch(addPerson({ index: id, person }));
+      setMemberNameValue('')
+    } 
+
+    if(!person) {
+      alert('Проверьте имя участника. Оно должно содержать не менее 1 символа!')
+    }
+
+    if(teamsListItem.people.length >= 5) {
+      alert('Нельзя создать более 5 участников')
     }
   };
 

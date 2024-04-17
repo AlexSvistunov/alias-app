@@ -46,7 +46,20 @@ const CreateTeamPage = () => {
   };
 
   const addMember = () => {
-    if (name && memberName) {
+
+    if(!name) {
+      alert('Введите название команды, куда будете добавлять участников')
+    }
+
+    if(!memberName) {
+      alert('Проверьте имя участника. Оно должно содержать не менее 1 символа!')
+    }
+
+    if(membersList.length >= 5) {
+      alert('Нельзя создать более 5 участников')
+    }
+    
+    if (name && memberName && membersList.length < 5) {
       setMembersList([
         ...membersList,
         {
@@ -54,7 +67,11 @@ const CreateTeamPage = () => {
           memberName,
         },
       ]);
+
+      setMemberName('')
     }
+
+  
   };
 
   const deletePersonHandler = (index) => {

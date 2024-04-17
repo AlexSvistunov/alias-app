@@ -61,7 +61,7 @@ const Turn = () => {
           <>
             <h2 className="turn__title section-title">Победила команда</h2>
             <div className="turn__turned-team">
-              <div className="turn__turned-circle">
+              <div className="turn__turned-circle" style={{backgroundColor: `${smdIsWinner.color[1]}`}}>
                 <img
                   className="turn__turned-img"
                   src={`/src/assets/${smdIsWinner.avatar}`}
@@ -73,16 +73,16 @@ const Turn = () => {
             <div className="turn__teams">
               {teamList.map((team) => (
                 <>
-                  <div
+                <div
                     className={
-                      teamList[turn] === team
+                      smdIsWinner === team
                         ? "turn__team turn__team--active"
                         : "turn__team"
                     }
                     key={team.name}
                   >
                     <div className="turn__team-left">
-                      <div className="turn__team-circle">
+                      <div className="turn__team-circle" style={{backgroundColor: `${team.color[1]}`}}>
                         <img
                           className=""
                           src={`/src/assets/${team.avatar}`}
@@ -113,7 +113,7 @@ const Turn = () => {
           <>
             <h2 className="turn__title section-title">Очередь команды</h2>
             <div className="turn__turned-team">
-              <div className="turn__turned-circle">
+              <div className="turn__turned-circle" style={{backgroundColor: `${teamList[turn].color[1]}`}}>
                 <img
                   className="turn__turned-img"
                   src={`/src/assets/${teamList[turn].avatar}`}
@@ -134,7 +134,7 @@ const Turn = () => {
                     key={team.name}
                   >
                     <div className="turn__team-left">
-                      <div className="turn__team-circle">
+                      <div className="turn__team-circle" style={{backgroundColor: `${team.color[1]}`}}>
                         <img
                           className=""
                           src={`/src/assets/${team.avatar}`}
