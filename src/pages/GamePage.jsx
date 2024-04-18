@@ -47,22 +47,22 @@ const GamePage = () => {
   ]);
 
   return (
-    <div style={{ height: "100vh", backgroundColor: "var(--violet-500)" }}>
+    <section className="game" style={{ height: "100vh", backgroundColor: "var(--violet-500)" }}>
       <div className="container game__container">
-        <div className="time">{lastWord ? "последнее слово" : time}</div>
+        <div className="game__time">{lastWord ? "последнее слово" : time}</div>
 
-        <div className="cards">
+        <div className="game__cards">
          
-          <div className="card">{words[currentCardIndex]}</div>
+          <div className="game__card">{words[currentCardIndex]}</div>
           {/* <div className="card-next"></div> */}
          
         </div>
 
   
 
-        <div className="buttons">
+        <div className="game__buttons">
           <div
-            className="button"
+            className="game__button"
             onClick={() => {
               if (lastWord) {
                 const resultArray = [...arrayResults, true];
@@ -81,7 +81,7 @@ const GamePage = () => {
             Да
           </div>
           <div
-            className="button"
+            className="game__button"
             onClick={() => {
               if (lastWord) {
                 const resultArray = [...arrayResults, false];
@@ -101,7 +101,7 @@ const GamePage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

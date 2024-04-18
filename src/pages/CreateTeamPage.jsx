@@ -6,7 +6,7 @@ import { addTeam } from "../store/slices/teamSlice";
 import { removeTeam } from "../store/slices/teamSlice";
 import { ROUTES } from "../routes";
 
-import "./CreateTeamPage.css";
+import "../styles/CreateTeamPage.css";
 import "../components/BottomBtn/BottomBtn.css";
 
 import { v4 as uuidv4 } from 'uuid';
@@ -87,7 +87,7 @@ const CreateTeamPage = () => {
 
   return (
     <div style={{ height: "100vh", backgroundColor: "var(--violet-300)" }}>
-      <div className="create-team">
+      <section className="create-team">
         <div className="container">
           <h2 className="create-team__title section-title">Создать команду</h2>
 
@@ -133,7 +133,7 @@ const CreateTeamPage = () => {
             <button className="btn__wrapper-continue" onClick={createTeam}>Создать команду</button>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

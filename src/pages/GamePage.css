@@ -1,4 +1,4 @@
-.time {
+.game__time {
   display: flex;
   justify-content: flex-end;
   padding: 15px;
@@ -8,7 +8,7 @@
 .game__container {
   color: white;
 }
-.cards {
+.game__cards {
   position: relative;
   height: 80vh;
   display: flex;
@@ -17,7 +17,7 @@
   z-index: 100;
 }
 
-.card {
+.game__card {
   position: absolute;
   width: 50%;
   height: 50%;
@@ -31,13 +31,13 @@
   background-color: var(--violet-400);
 }
 
-.buttons {
+.game__buttons {
   display: flex;
   justify-content: center;
   gap: 25px;
 }
 
-.button {
+.game__button {
   padding: 15px;
   font-size: 35px;
   cursor: pointer;

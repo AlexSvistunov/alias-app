@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { changeFields, addPerson, deletePerson } from "../store/slices/teamSlice";
 import { ROUTES } from "../routes";
 
-import "./TeamEditPage.css";
+import "../styles/TeamEditPage.css";
 import BottomBtn from "../components/BottomBtn/BottomBtn";
 
 const TeamEditPage = () => {
