@@ -21,6 +21,7 @@ const ResultPage = () => {
   const wordSlice = wordsArray.slice(0, results.length);
 
   const [array, setArray] = useState(results);
+
   console.log(array);
   console.log(results);
 
@@ -37,11 +38,16 @@ const ResultPage = () => {
     });
   };
 
+  // const changeResultHandler = () => {
+  //   const newResultArray = [];
+  //   array.forEach((elResult) => {
+  //     newResultArray.push(elResult.result);
+  //   });
+  //   dispatch(changeResult({ index: turn, newResult: newResultArray }));
+  // };
+
   const changeResultHandler = () => {
-    const newResultArray = [];
-    array.forEach((elResult) => {
-      newResultArray.push(elResult.result);
-    });
+    const newResultArray = [...array];
     dispatch(changeResult({ index: turn, newResult: newResultArray }));
   };
 

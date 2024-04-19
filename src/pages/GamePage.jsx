@@ -28,7 +28,6 @@ const GamePage = () => {
 
   console.log(arrayResults);
 
-
   const timeOutId = setTimeout(() => {
     setTime(time - 1);
   }, 1000);

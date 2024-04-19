@@ -60,7 +60,7 @@ const teamSlice = createSlice({
 
     changeResult : (state, action) => {
       state.teamList[action.payload.index].result = action.payload.newResult
-      const amountOfTrue = action.payload.newResult.filter((el => el)).length
+      const amountOfTrue = action.payload.newResult.filter((el => el.result === true)).length
       state.teamList[action.payload.index].score += amountOfTrue
     },
 
