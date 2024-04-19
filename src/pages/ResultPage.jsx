@@ -18,7 +18,6 @@ const ResultPage = () => {
   const results = useSelector((state) => state.team.teamList)[turn]["result"];
   console.log(results);
   const teamList = useSelector((state) => state.team.teamList);
-  const wordSlice = wordsArray.slice(0, results.length);
 
   const [array, setArray] = useState(results);
 
@@ -38,20 +37,12 @@ const ResultPage = () => {
     });
   };
 
-  // const changeResultHandler = () => {
-  //   const newResultArray = [];
-  //   array.forEach((elResult) => {
-  //     newResultArray.push(elResult.result);
-  //   });
-  //   dispatch(changeResult({ index: turn, newResult: newResultArray }));
-  // };
 
   const changeResultHandler = () => {
     const newResultArray = [...array];
     dispatch(changeResult({ index: turn, newResult: newResultArray }));
   };
 
-  const setCheckedHandler = () => {};
 
   return (
     <div style={{ minHeight: "100vh", backgroundColor: "var(--violet-300)" }}>

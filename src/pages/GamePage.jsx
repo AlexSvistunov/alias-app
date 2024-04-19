@@ -49,9 +49,9 @@ const GamePage = () => {
     currentCardIndex,
   ]);
 
-  // useEffect(() => {
-  //   setWords(shuffle(wordsArray));
-  // }, [turn]);
+  useEffect(() => {
+    setWords(shuffle(wordsArray));
+  }, []);
 
   return (
     <section
