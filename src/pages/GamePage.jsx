@@ -26,7 +26,8 @@ const GamePage = () => {
     setCurrentCartIndex(0);
   }
 
-  console.log(lastWord);
+  console.log(arrayResults);
+
 
   const timeOutId = setTimeout(() => {
     setTime(time - 1);
@@ -71,7 +72,7 @@ const GamePage = () => {
             className="game__button"
             onClick={() => {
               if (lastWord) {
-                const resultArray = [...arrayResults, true];
+                const resultArray = [...arrayResults, {word: words[currentCardIndex], result: true}];
                 setArrayResults(resultArray);
 
                 navigate(ROUTES.result);
@@ -80,7 +81,7 @@ const GamePage = () => {
                 );
               } else {
                 setCurrentCartIndex(currentCardIndex + 1);
-                setArrayResults([...arrayResults, true]);
+                setArrayResults([...arrayResults, {word: words[currentCardIndex], result: true}]);
               }
             }}
           >
@@ -90,7 +91,7 @@ const GamePage = () => {
             className="game__button"
             onClick={() => {
               if (lastWord) {
-                const resultArray = [...arrayResults, false];
+                const resultArray = [...arrayResults, {word: words[currentCardIndex], result: false}];
                 setArrayResults(resultArray);
 
                 navigate(ROUTES.result);
@@ -99,7 +100,7 @@ const GamePage = () => {
                 );
               } else {
                 setCurrentCartIndex(currentCardIndex + 1);
-                setArrayResults([...arrayResults, false]);
+                setArrayResults([...arrayResults, {word: words[currentCardIndex], result: false}]);
               }
             }}
           >

@@ -18,14 +18,9 @@ const ResultPage = () => {
   const results = useSelector((state) => state.team.teamList)[turn]["result"];
   console.log(results);
   const teamList = useSelector((state) => state.team.teamList);
-  const arr = [];
   const wordSlice = wordsArray.slice(0, results.length);
 
-  results.forEach((el, index) => {
-    arr.push({ word: wordSlice[index], result: el });
-  });
-
-  const [array, setArray] = useState(arr);
+  const [array, setArray] = useState(results);
   console.log(array);
   console.log(results);
 
@@ -100,9 +95,7 @@ const ResultPage = () => {
               changeResultHandler();
               dispatch(nextTurn());
             }
-            // проверить количество команд
-            // а вообще же еще раунды какиенть
-            // количество раундов
+
           }}
         >
           Продолжить
