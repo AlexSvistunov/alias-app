@@ -6,7 +6,7 @@ import BottomBtn from "../components/BottomBtn/BottomBtn";
 
 const AliasPage = () => {
   return (
-    <div style={{ height: "100vh", backgroundColor: "var(--violet-300)" }}>
+    <div style={{ minHeight: "100vh", backgroundColor: "var(--violet-300)" }}>
       <div className="container">
         <Teams />
         

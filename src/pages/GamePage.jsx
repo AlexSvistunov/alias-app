@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { words } from "../utils/constants";
+import { shuffle, wordsArray, wordsAPI } from "../utils/constants";
 
 import { addResultFieldToTeam } from "../store/slices/teamSlice";
 
@@ -20,7 +20,11 @@ const GamePage = () => {
   const [currentCardIndex, setCurrentCartIndex] = useState(0);
   const [arrayResults, setArrayResults] = useState([]);
   const [lastWord, setLastWord] = useState(false);
+  let [words, setWords] = useState(wordsArray);
 
+  if (currentCardIndex === words.length) {
+    setCurrentCartIndex(0);
+  }
 
   console.log(lastWord);
 
@@ -41,24 +45,26 @@ const GamePage = () => {
     time,
     timeOutId,
     arrayResults,
-    turn,
     dispatch,
     currentCardIndex,
   ]);
 
+  // useEffect(() => {
+  //   setWords(shuffle(wordsArray));
+  // }, [turn]);
+
   return (
-    <section className="game" style={{ height: "100vh", backgroundColor: "var(--violet-500)" }}>
+    <section
+      className="game"
+      style={{ minHeight: "100vh", backgroundColor: "var(--violet-500)" }}
+    >
       <div className="container game__container">
         <div className="game__time">{lastWord ? "последнее слово" : time}</div>
 
         <div className="game__cards">
-         
           <div className="game__card">{words[currentCardIndex]}</div>
           {/* <div className="card-next"></div> */}
-         
         </div>
-
-  
 
         <div className="game__buttons">
           <div

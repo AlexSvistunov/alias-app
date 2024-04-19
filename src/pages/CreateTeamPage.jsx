@@ -86,7 +86,7 @@ const CreateTeamPage = () => {
   // }
 
   return (
-    <div style={{ height: "100vh", backgroundColor: "var(--violet-300)" }}>
+    <div style={{ minHeight: "100vh", backgroundColor: "var(--violet-300)" }}>
       <section className="create-team">
         <div className="container">
           <h2 className="create-team__title section-title">Создать команду</h2>

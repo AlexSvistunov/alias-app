@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 
-import { words } from "../utils/constants";
+import { wordsArray } from "../utils/constants";
 import { Link } from "react-router-dom";
 
 import { nextTurn, newCircleTurn } from "../store/slices/indexTurnSlice";
@@ -16,9 +16,10 @@ const ResultPage = () => {
 
   const turn = useSelector((state) => state.turn.turn);
   const results = useSelector((state) => state.team.teamList)[turn]["result"];
+  console.log(results);
   const teamList = useSelector((state) => state.team.teamList);
   const arr = [];
-  const wordSlice = words.slice(0, results.length);
+  const wordSlice = wordsArray.slice(0, results.length);
 
   results.forEach((el, index) => {
     arr.push({ word: wordSlice[index], result: el });
@@ -52,7 +53,7 @@ const ResultPage = () => {
   const setCheckedHandler = () => {};
 
   return (
-    <div style={{ height: "100vh", backgroundColor: "var(--violet-300)" }}>
+    <div style={{ minHeight: "100vh", backgroundColor: "var(--violet-300)" }}>
       <div className="container">
         <h2 className="result__title section-title">Результаты раунда</h2>
 
