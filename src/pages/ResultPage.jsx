@@ -16,13 +16,9 @@ const ResultPage = () => {
 
   const turn = useSelector((state) => state.turn.turn);
   const results = useSelector((state) => state.team.teamList)[turn]["result"];
-  console.log(results);
   const teamList = useSelector((state) => state.team.teamList);
 
   const [array, setArray] = useState(results);
-
-  console.log(array);
-  console.log(results);
 
   const changeInput = (index) => {
     setArray((prevArray) => {
@@ -78,8 +74,6 @@ const ResultPage = () => {
             </div>
           ))}
         </div>
-
-        {/* NO CONNECTION BETWEEN CHECKED AND LEFT POSITION */}
 
        <div className="btn-wrapper">
        <Link className="btn__wrapper-continue result__continue"

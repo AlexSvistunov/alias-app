@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 // localStorage
 // отнимать очки за пропуск
 // рандомная аватарка + рандомный цвет
-// изменить концепцию слов, вместо записывания result: true, можно записывать слово и result
+
 
 // pages and components
 // div and section
