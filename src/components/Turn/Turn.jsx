@@ -64,7 +64,7 @@ const Turn = () => {
               <div className="turn__turned-circle" style={{backgroundColor: `${smdIsWinner.color[1]}`}}>
                 <img
                   className="turn__turned-img"
-                  src={`/src/assets/${smdIsWinner.avatar}`}
+                  src={`/${smdIsWinner.avatar}`}
                 ></img>
               </div>
               <span className="turn__turned-name">{smdIsWinner.name}</span>
@@ -85,7 +85,7 @@ const Turn = () => {
                       <div className="turn__team-circle" style={{backgroundColor: `${team.color[1]}`}}>
                         <img
                           className=""
-                          src={`/src/assets/${team.avatar}`}
+                          src={`/${team.avatar}`}
                         ></img>
                       </div>
 

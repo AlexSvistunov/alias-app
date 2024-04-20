@@ -12,7 +12,7 @@ const TeamItem = ({ team, index, deleteTeam }) => {
         to={`/edit-team/${index}`}
       />
       <div className="team__circle" style={{ backgroundColor: team.color[1]}}>
-        <img className="team__img" src={`/src/assets/${team.avatar}`}></img>
+        <img className="team__img" src={`/${team.avatar}`}></img>
 
         <div className="team__btn-circle">
           <button

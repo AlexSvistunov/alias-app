@@ -21,7 +21,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 // отнимать очки за пропуск
 // рандомная аватарка + рандомный цвет
 
-
 // pages and components
 // div and section
 

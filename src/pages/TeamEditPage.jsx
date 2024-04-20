@@ -175,7 +175,7 @@ const TeamEditPage = () => {
                 <div className="edit__avatar-img">
                   <img
                     className="edit__avatar-image"
-                    src="/src/assets/avocado.png"
+                    src="/avocado.png"
                   ></img>
                 </div>
               </div>
@@ -186,7 +186,7 @@ const TeamEditPage = () => {
                 <div className="edit__avatar-img">
                   <img
                     className="edit__avatar-image"
-                    src="/src/assets/banana.png"
+                    src="/banana.png"
                   ></img>
                 </div>
               </div>
@@ -197,7 +197,7 @@ const TeamEditPage = () => {
                 <div className="edit__avatar-img">
                   <img
                     className="edit__avatar-image"
-                    src="/src/assets/bread.png"
+                    src="/bread.png"
                   ></img>
                 </div>
               </div>
@@ -208,7 +208,7 @@ const TeamEditPage = () => {
                 <div className="edit__avatar-img">
                   <img
                     className="edit__avatar-image"
-                    src="/src/assets/broccoli.png"
+                    src="/broccoli.png"
                   ></img>
                 </div>
               </div>
@@ -219,7 +219,7 @@ const TeamEditPage = () => {
                 <div className="edit__avatar-img">
                   <img
                     className="edit__avatar-image"
-                    src="/src/assets/cake.png"
+                    src="/cake.png"
                   ></img>
                 </div>
               </div>
@@ -230,7 +230,7 @@ const TeamEditPage = () => {
                 <div className="edit__avatar-img">
                   <img
                     className="edit__avatar-image"
-                    src="/src/assets/carrot.png"
+                    src="/carrot.png"
                   ></img>
                 </div>
               </div>
@@ -241,7 +241,7 @@ const TeamEditPage = () => {
                 <div className="edit__avatar-img">
                   <img
                     className="edit__avatar-image"
-                    src="/src/assets/chili.png"
+                    src="/chili.png"
                   ></img>
                 </div>
               </div>
@@ -252,7 +252,7 @@ const TeamEditPage = () => {
                 <div className="edit__avatar-img">
                   <img
                     className="edit__avatar-image"
-                    src="/src/assets/donut.png"
+                    src="/donut.png"
                   ></img>
                 </div>
               </div>
@@ -263,7 +263,7 @@ const TeamEditPage = () => {
                 <div className="edit__avatar-img">
                   <img
                     className="edit__avatar-image"
-                    src="/src/assets/eggs.png"
+                    src="/eggs.png"
                   ></img>
                 </div>
               </div>
@@ -274,7 +274,7 @@ const TeamEditPage = () => {
                 <div className="edit__avatar-img">
                   <img
                     className="edit__avatar-image"
-                    src="/src/assets/muffin.png"
+                    src="/muffin.png"
                   ></img>
                 </div>
               </div>
@@ -285,7 +285,7 @@ const TeamEditPage = () => {
                 <div className="edit__avatar-img">
                   <img
                     className="edit__avatar-image"
-                    src="/src/assets/mushroom.png"
+                    src="/mushroom.png"
                   ></img>
                 </div>
               </div>
@@ -296,7 +296,7 @@ const TeamEditPage = () => {
                 <div className="edit__avatar-img">
                   <img
                     className="edit__avatar-image"
-                    src="/src/assets/pasta.png"
+                    src="/pasta.png"
                   ></img>
                 </div>
               </div>

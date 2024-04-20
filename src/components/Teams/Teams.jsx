@@ -38,7 +38,7 @@ const Teams = () => {
             <div className="team__circle">
               <img
                 className="team__img"
-                src="/src/assets/plus.svg"
+                src="/plus.svg"
                 width={87}
                 height={87}
               ></img>
