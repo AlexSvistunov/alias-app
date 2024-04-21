@@ -13,12 +13,10 @@ import { useEffect } from "react";
 const Turn = () => {
   const dispatch = useDispatch();
   const teamList = useSelector((state) => state.team.teamList);
-  console.log(teamList);
   const turn = useSelector((state) => state.turn.turn);
   const scoreForWin = useSelector(
     (state) => state.settings.settings.scoreForWin
   );
-  console.log(scoreForWin);
 
   const winTeams = teamList.filter((team) => team.score >= scoreForWin);
   if (winTeams.length === 1 && turn === 0) {
@@ -31,22 +29,17 @@ const Turn = () => {
       if (max < team.score) {
         max = team.score;
       }
-
     });
 
     console.log(max);
 
-    const itemWithMaxScore = winTeams.filter(team => team.score === max)
-    if(itemWithMaxScore.length === 1) {
+    const itemWithMaxScore = winTeams.filter((team) => team.score === max);
+    if (itemWithMaxScore.length === 1) {
       dispatch(pickWinner({ name: itemWithMaxScore[0].name }));
     }
-
-
   }
-  console.log(winTeams);
 
   const smdIsWinner = teamList.find((team) => team.isWinner === true);
-  console.log(smdIsWinner);
 
   useEffect(() => {
     if (smdIsWinner) {
@@ -61,7 +54,10 @@ const Turn = () => {
           <>
             <h2 className="turn__title section-title">Победила команда</h2>
             <div className="turn__turned-team">
-              <div className="turn__turned-circle" style={{backgroundColor: `${smdIsWinner.color[1]}`}}>
+              <div
+                className="turn__turned-circle"
+                style={{ backgroundColor: `${smdIsWinner.color[1]}` }}
+              >
                 <img
                   className="turn__turned-img"
                   src={`/${smdIsWinner.avatar}`}
@@ -73,7 +69,7 @@ const Turn = () => {
             <div className="turn__teams">
               {teamList.map((team) => (
                 <>
-                <div
+                  <div
                     className={
                       smdIsWinner === team
                         ? "turn__team turn__team--active"
@@ -82,11 +78,11 @@ const Turn = () => {
                     key={team.name}
                   >
                     <div className="turn__team-left">
-                      <div className="turn__team-circle" style={{backgroundColor: `${team.color[1]}`}}>
-                        <img
-                          className=""
-                          src={`/${team.avatar}`}
-                        ></img>
+                      <div
+                        className="turn__team-circle"
+                        style={{ backgroundColor: `${team.color[1]}` }}
+                      >
+                        <img className="" src={`/${team.avatar}`}></img>
                       </div>
 
                       <div className="turn__team-info">
@@ -113,7 +109,10 @@ const Turn = () => {
           <>
             <h2 className="turn__title section-title">Очередь команды</h2>
             <div className="turn__turned-team">
-              <div className="turn__turned-circle" style={{backgroundColor: `${teamList[turn].color[1]}`}}>
+              <div
+                className="turn__turned-circle"
+                style={{ backgroundColor: `${teamList[turn].color[1]}` }}
+              >
                 <img
                   className="turn__turned-img"
                   src={`/src/assets/${teamList[turn].avatar}`}
@@ -124,35 +123,34 @@ const Turn = () => {
 
             <div className="turn__teams">
               {teamList.map((team) => (
-                <>
-                  <div
-                    className={
-                      teamList[turn] === team
-                        ? "turn__team turn__team--active"
-                        : "turn__team"
-                    }
-                    key={team.name}
-                  >
-                    <div className="turn__team-left">
-                      <div className="turn__team-circle" style={{backgroundColor: `${team.color[1]}`}}>
-                        <img
-                          className=""
-                          src={`/src/assets/${team.avatar}`}
-                        ></img>
-                      </div>
-
-                      <div className="turn__team-info">
-                        <span className="turn__team-name">{team.name}</span>
-                        <span className="turn__team-members"></span>
-                      </div>
+                <div
+                  className={
+                    teamList[turn] === team
+                      ? "turn__team turn__team--active"
+                      : "turn__team"
+                  }
+                  key={team.id}
+                >
+                  <div className="turn__team-left">
+                    <div
+                      className="turn__team-circle"
+                      style={{ backgroundColor: `${team.color[1]}` }}
+                    >
+                      <img
+                        className=""
+                        src={`/src/assets/${team.avatar}`}
+                      ></img>
                     </div>
 
-                    <span className="turn__team-score">{team.score}</span>
+                    <div className="turn__team-info">
+                      <span className="turn__team-name">{team.name}</span>
+                      <span className="turn__team-members"></span>
+                    </div>
                   </div>
-                </>
-              ))}
 
-              {/* active team */}
+                  <span className="turn__team-score">{team.score}</span>
+                </div>
+              ))}
             </div>
 
             {/* <Link style={{ marginTop: "50px" }} to={ROUTES.game}>
