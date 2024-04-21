@@ -31,12 +31,10 @@ const teamSlice = createSlice({
 
   reducers: {
     addTeam: (state, action) => {
-      console.log(action.payload);
       state.teamList.push(action.payload);
     },
 
     addResultFieldToTeam: (state, action) => {
-      console.log(action.payload);
       state.teamList[action.payload.index]["result"] = action.payload.result;
     },
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 
 import "./Teams.css";
 import TeamItem from "../TeamItem/TeamItem";
@@ -12,7 +12,6 @@ const Teams = () => {
   const dispatch = useDispatch()
 
   const teamsList = useSelector(state => state.team.teamList)
-  console.log(teamsList);
 
   const deleteTeam = (index) => {
     if(teamsList.length > 2) {

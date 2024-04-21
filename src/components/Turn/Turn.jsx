@@ -2,8 +2,6 @@ import { useSelector } from "react-redux";
 import confetti from "https://cdn.skypack.dev/canvas-confetti";
 
 import "./Turn.css";
-import { Link } from "react-router-dom";
-import { ROUTES } from "../../routes";
 
 import { useDispatch } from "react-redux";
 import { pickWinner } from "../../store/slices/teamSlice";

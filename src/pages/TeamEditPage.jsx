@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,7 +8,6 @@ import { changeFields, addPerson, deletePerson } from "../store/slices/teamSlice
 import { ROUTES } from "../routes";
 
 import "../styles/TeamEditPage.css";
-import BottomBtn from "../components/BottomBtn/BottomBtn";
 import RedirectNotFound from "../components/RedirectNotFound/RedirectNotFound";
 
 const TeamEditPage = () => {
@@ -17,7 +16,6 @@ const TeamEditPage = () => {
 
   const { id } = useParams();
   const teamsListItem = useSelector((state) => state.team.teamList)[id];
-  console.log(teamsListItem);
 
   const [nameValue, setNameValue] = useState(teamsListItem?.name);
   const [memberNameValue, setMemberNameValue] = useState("");
@@ -30,7 +28,6 @@ const TeamEditPage = () => {
     return <RedirectNotFound/>
   }
 
-  
   const nameOnChange = (value) => {
     setNameValue(value);
   };

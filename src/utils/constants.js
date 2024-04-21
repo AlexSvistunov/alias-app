@@ -111,35 +111,29 @@ export const wordsAPI = [
   "компьютер",
   "телевизор",
   "пульт",
+  "бог",
+  "стена",
+  "химия",
+  "команда",
+  "стакан",
+  "лист",
 ];
-
-console.log(wordsAPI);
 
 export const shuffle = (array) => {
   let newArray = array.slice(); // Создаем копию исходного массива
   let currentIndex = newArray.length;
   let temporaryValue, randomIndex;
 
-  // Пока остаются элементы для перемешивания
   while (currentIndex !== 0) {
-    // Выбираем случайный индекс
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
-    // Меняем местами элементы
     temporaryValue = newArray[currentIndex];
     newArray[currentIndex] = newArray[randomIndex];
     newArray[randomIndex] = temporaryValue;
   }
 
   return newArray;
-}
+};
 
-
-export const wordsArray = shuffle(wordsAPI)
-
-
-
-
-
-
+export const wordsArray = shuffle(wordsAPI);
