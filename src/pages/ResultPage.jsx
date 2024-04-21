@@ -4,6 +4,7 @@ import { wordsArray } from "../utils/constants";
 import { Link } from "react-router-dom";
 
 import { nextTurn, newCircleTurn } from "../store/slices/indexTurnSlice";
+import { makeFlagFalse } from "../store/slices/flagSlice";
 import { ROUTES } from "../routes";
 
 import { useState } from "react";
@@ -82,9 +83,11 @@ const ResultPage = () => {
             if (turn === teamList.length - 1) {
               changeResultHandler();
               dispatch(newCircleTurn());
+              dispatch(makeFlagFalse())
             } else {
               changeResultHandler();
               dispatch(nextTurn());
+              dispatch(makeFlagFalse())
             }
 
           }}

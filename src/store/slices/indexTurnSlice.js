@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import useGetTeam from "../../hooks/useGetTeam";
 
 
-
 const initialState = {
   turn: 0,
 };

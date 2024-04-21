@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { shuffle, wordsArray, wordsAPI } from "../utils/constants";
 
 import { addResultFieldToTeam } from "../store/slices/teamSlice";
+import { makeFlagFalse, makeFlagTrue } from "../store/slices/flagSlice";
 
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -13,6 +14,8 @@ const GamePage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const turn = useSelector((state) => state.turn.turn);
+  const flag = useSelector((state) => state.flag.flag)
+
   const roundDuration = useSelector(
     (state) => state.settings.settings.roundDuration
   );
@@ -26,7 +29,6 @@ const GamePage = () => {
     setCurrentCartIndex(0);
   }
 
-  console.log(arrayResults);
 
   const timeOutId = setTimeout(() => {
     setTime(time - 1);
@@ -73,6 +75,7 @@ const GamePage = () => {
               if (lastWord) {
                 const resultArray = [...arrayResults, {word: words[currentCardIndex], result: true}];
                 setArrayResults(resultArray);
+                dispatch(makeFlagTrue())
 
                 navigate(ROUTES.result);
                 dispatch(
@@ -91,8 +94,11 @@ const GamePage = () => {
             onClick={() => {
               if (lastWord) {
                 const resultArray = [...arrayResults, {word: words[currentCardIndex], result: false}];
+
+
                 setArrayResults(resultArray);
 
+                dispatch(makeFlagTrue())
                 navigate(ROUTES.result);
                 dispatch(
                   addResultFieldToTeam({ index: turn, result: resultArray })

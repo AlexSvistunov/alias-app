@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -9,6 +9,7 @@ import { ROUTES } from "../routes";
 
 import "../styles/TeamEditPage.css";
 import BottomBtn from "../components/BottomBtn/BottomBtn";
+import RedirectNotFound from "../components/RedirectNotFound/RedirectNotFound";
 
 const TeamEditPage = () => {
   const dispatch = useDispatch();
@@ -18,13 +19,16 @@ const TeamEditPage = () => {
   const teamsListItem = useSelector((state) => state.team.teamList)[id];
   console.log(teamsListItem);
 
-  const [nameValue, setNameValue] = useState(teamsListItem.name);
+  const [nameValue, setNameValue] = useState(teamsListItem?.name);
   const [memberNameValue, setMemberNameValue] = useState("");
   
-  const [color, setColor] = useState(teamsListItem.color)
-  const [avatar, setAvatar] = useState(teamsListItem.avatar)
+  const [color, setColor] = useState(teamsListItem?.color)
+  const [avatar, setAvatar] = useState(teamsListItem?.avatar)
 
-  console.log(color);
+
+  if(typeof teamsListItem === 'undefined') {
+    return <RedirectNotFound/>
+  }
 
   
   const nameOnChange = (value) => {
@@ -64,6 +68,7 @@ const TeamEditPage = () => {
   const avatarActiveHandler = (avatar) => {
     setAvatar(avatar)
   }
+
 
 
   return (
