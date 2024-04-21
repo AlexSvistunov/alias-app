@@ -1,9 +1,11 @@
 import { ROUTES } from "../../routes";
 import "./BottomBtn.css";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const BottomBtn = ({from}) => {
+const BottomBtn = ({from, startAgain}) => {
+  const navigate = useNavigate()
+
   if(from === 'score') {
     return (
       <div className="btn-wrapper">
@@ -24,7 +26,9 @@ const BottomBtn = ({from}) => {
   if(from === 'score-winner') {
     return (
       <div className="btn-wrapper">
-      <a className="btn__wrapper-continue" href={ROUTES.teams}>Начать заново</a>
+      <a className="btn__wrapper-continue" href="/teams" onClick={() => {
+        startAgain()
+      }}>Начать заново</a>
     </div>
     )
   }

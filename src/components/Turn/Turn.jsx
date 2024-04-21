@@ -39,6 +39,10 @@ const Turn = () => {
 
   const smdIsWinner = teamList.find((team) => team.isWinner === true);
 
+  const startAgain = () => {
+    localStorage.removeItem('persist:root')
+  }
+
   useEffect(() => {
     if (smdIsWinner) {
       confetti();
@@ -101,7 +105,7 @@ const Turn = () => {
           Играть
         </Link> */}
 
-            <BottomBtn from="score-winner"></BottomBtn>
+            <BottomBtn from="score-winner" startAgain={startAgain}></BottomBtn>
           </>
         ) : (
           <>
@@ -155,7 +159,7 @@ const Turn = () => {
           Играть
         </Link> */}
 
-            <BottomBtn from="score"></BottomBtn>
+            <BottomBtn from="score" startAgain={startAgain}></BottomBtn>
           </>
         )}
       </div>

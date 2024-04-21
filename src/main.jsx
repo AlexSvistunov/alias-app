@@ -21,5 +21,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 // отнимать очки за пропуск
 // рандомная аватарка + рандомный цвет
 
-// pages and components
-// div and section
+
+// вместо удаления из LocalStorage можно попробовать обновить на 0 score у каждой команды 
